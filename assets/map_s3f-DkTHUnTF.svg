@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name=" 레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 688.88 440.37">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        mask: url(#mask);
+      }
+
+      .cls-3 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        mask: url(#mask-2);
+      }
+
+      .cls-5 {
+        mask: url(#mask-3);
+      }
+
+      .cls-6 {
+        mask: url(#mask-4);
+      }
+
+      .cls-7 {
+        mask: url(#mask-1);
+      }
+
+      .cls-8 {
+        fill: url(#_무제_그라디언트_12-4);
+      }
+
+      .cls-9 {
+        fill: url(#_무제_그라디언트_12-3);
+      }
+
+      .cls-10 {
+        fill: url(#_무제_그라디언트_12-5);
+      }
+
+      .cls-11 {
+        fill: url(#_무제_그라디언트_12-2);
+      }
+
+      .cls-12 {
+        fill: url(#_무제_그라디언트_13-5);
+      }
+
+      .cls-13 {
+        fill: url(#_무제_그라디언트_13-3);
+      }
+
+      .cls-14 {
+        fill: url(#_무제_그라디언트_13-4);
+      }
+
+      .cls-15 {
+        fill: url(#_무제_그라디언트_13-2);
+      }
+
+      .cls-16 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-17 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-18 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-19 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-20 {
+        clip-path: url(#clippath-7);
+      }
+
+      .cls-21 {
+        clip-path: url(#clippath-6);
+      }
+
+      .cls-22 {
+        clip-path: url(#clippath-9);
+      }
+
+      .cls-23 {
+        clip-path: url(#clippath-8);
+      }
+
+      .cls-24 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-25 {
+        fill: #fff;
+      }
+
+      .cls-26 {
+        fill: #ff0;
+      }
+
+      .cls-27 {
+        fill: url(#_무제_그라디언트_13);
+      }
+
+      .cls-28 {
+        fill: url(#_무제_그라디언트_12);
+      }
+
+      .cls-29 {
+        fill: #00cadc;
+      }
+
+      .cls-30 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="cls-1" points="350.95 209.9 350.95 350.82 350.95 350.82 547.92 350.82 547.92 209.9 350.95 209.9"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" x="328.92" y="170.09" width="241.04" height="220.53" transform="translate(-79.97 262.28) rotate(-30)"/>
+    </clipPath>
+    <linearGradient id="_무제_그라디언트_13" data-name="무제 그라디언트 13" x1="46.86" y1="640.77" x2="47.86" y2="640.77" gradientTransform="translate(141758.35 10724.58) rotate(-90) scale(220.53 -220.53)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ccc"/>
+      <stop offset=".08" stop-color="#ccc"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="155.05" y="-13.53" width="588.78" height="587.77" maskUnits="userSpaceOnUse">
+      <g class="cls-16">
+        <rect class="cls-27" x="233.42" y="65.72" width="432.02" height="429.27" transform="translate(-79.97 262.28) rotate(-30)"/>
+      </g>
+    </mask>
+    <linearGradient id="_무제_그라디언트_12" data-name="무제 그라디언트 12" x1="46.86" y1="640.77" x2="47.86" y2="640.77" gradientTransform="translate(141758.32 10724.56) rotate(-90) scale(220.53 -220.53)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".08" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <clipPath id="clippath-2">
+      <polygon class="cls-1" points="133.28 44.41 133.28 186.12 133.28 186.12 285.79 186.12 285.79 44.41 133.28 44.41"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <rect class="cls-1" x="108.07" y="15.77" width="202.94" height="198.98" transform="translate(-29.56 120.21) rotate(-30)"/>
+    </clipPath>
+    <linearGradient id="_무제_그라디언트_13-2" data-name="무제 그라디언트 13" x1="46.95" y1="640.76" x2="47.95" y2="640.76" gradientTransform="translate(127709.13 9557.52) rotate(-90) scale(198.98 -198.98)" xlink:href="#_무제_그라디언트_13"/>
+    <mask id="mask-1" x="-46.64" y="-140.81" width="512.35" height="512.15" maskUnits="userSpaceOnUse">
+      <g class="cls-17">
+        <rect class="cls-15" x="21.91" y="-72.1" width="375.26" height="374.73" transform="translate(-29.56 120.21) rotate(-30)"/>
+      </g>
+    </mask>
+    <linearGradient id="_무제_그라디언트_12-2" data-name="무제 그라디언트 12" x1="46.95" y1="640.76" x2="47.95" y2="640.76" gradientTransform="translate(127709.1 9557.52) rotate(-90) scale(198.98 -198.98)" xlink:href="#_무제_그라디언트_12"/>
+    <clipPath id="clippath-4">
+      <polygon class="cls-1" points="133.28 209.9 133.28 350.82 133.28 350.82 327.17 350.82 327.17 209.9 133.28 209.9"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <rect class="cls-1" x="111.04" y="170.86" width="238.38" height="218.99" transform="translate(-109.33 152.67) rotate(-30)"/>
+    </clipPath>
+    <linearGradient id="_무제_그라디언트_13-3" data-name="무제 그라디언트 13" x1="46.87" y1="640.77" x2="47.87" y2="640.77" gradientTransform="translate(140554.66 10653.13) rotate(-90) scale(218.99 -218.99)" xlink:href="#_무제_그라디언트_13"/>
+    <mask id="mask-2" x="-61.48" y="-10.87" width="583.4" height="582.45" maskUnits="userSpaceOnUse">
+      <g class="cls-24">
+        <rect class="cls-13" x="16.21" y="67.64" width="428.03" height="425.43" transform="translate(-109.33 152.67) rotate(-30)"/>
+      </g>
+    </mask>
+    <linearGradient id="_무제_그라디언트_12-3" data-name="무제 그라디언트 12" x1="46.87" y1="640.77" x2="47.87" y2="640.77" gradientTransform="translate(140554.66 10653.13) rotate(-90) scale(218.99 -218.99)" xlink:href="#_무제_그라디언트_12"/>
+    <clipPath id="clippath-6">
+      <polygon class="cls-1" points="571.69 44.41 571.69 44.41 571.69 350.82 661.29 350.82 661.29 44.41 571.69 44.41"/>
+    </clipPath>
+    <clipPath id="clippath-7">
+      <rect class="cls-1" x="501.09" y="42.54" width="230.79" height="310.16" transform="translate(-16.21 334.72) rotate(-30)"/>
+    </clipPath>
+    <linearGradient id="_무제_그라디언트_13-4" data-name="무제 그라디언트 13" x1="46.61" y1="640.81" x2="47.61" y2="640.81" gradientTransform="translate(199367.6 14809.55) rotate(-90) scale(310.16 -310.16)" xlink:href="#_무제_그라디언트_13"/>
+    <mask id="mask-3" x="272.74" y="-148.08" width="687.51" height="691.4" maskUnits="userSpaceOnUse">
+      <g class="cls-20">
+        <rect class="cls-14" x="366.79" y="-57.4" width="499.4" height="510.03" transform="translate(-16.21 334.72) rotate(-30)"/>
+      </g>
+    </mask>
+    <linearGradient id="_무제_그라디언트_12-4" data-name="무제 그라디언트 12" x1="46.61" y1="640.81" x2="47.61" y2="640.81" gradientTransform="translate(199367.65 14809.56) rotate(-90) scale(310.16 -310.16)" xlink:href="#_무제_그라디언트_12"/>
+    <clipPath id="clippath-8">
+      <polygon class="cls-1" points="309.57 44.41 309.57 186.12 309.57 186.12 547.92 186.12 547.92 44.41 309.57 44.41"/>
+    </clipPath>
+    <clipPath id="clippath-9">
+      <rect class="cls-1" x="290.11" y="-5.69" width="277.27" height="241.9" transform="translate(-.19 229.81) rotate(-30)"/>
+    </clipPath>
+    <linearGradient id="_무제_그라디언트_13-5" data-name="무제 그라디언트 13" x1="46.78" y1="640.78" x2="47.78" y2="640.78" gradientTransform="translate(155432.18 11553.07) rotate(-90) scale(241.9 -241.9)" xlink:href="#_무제_그라디언트_13"/>
+    <mask id="mask-4" x="97.47" y="-215.14" width="662.55" height="660.82" maskUnits="userSpaceOnUse">
+      <g class="cls-22">
+        <rect class="cls-12" x="185.37" y="-125.75" width="486.76" height="482.02" transform="translate(-.19 229.81) rotate(-30)"/>
+      </g>
+    </mask>
+    <linearGradient id="_무제_그라디언트_12-5" data-name="무제 그라디언트 12" x1="46.78" y1="640.78" x2="47.78" y2="640.78" gradientTransform="translate(155432.18 11553.08) rotate(-90) scale(241.9 -241.9)" xlink:href="#_무제_그라디언트_12"/>
+  </defs>
+  <polygon class="cls-3" points="687.89 402.99 128.93 402.99 128.93 399.49 684.39 399.49 684.39 4.49 4.49 4.49 4.49 399.49 33.05 399.49 33.05 402.99 .99 402.99 .99 .99 687.89 .99 687.89 402.99"/>
+  <polygon class="cls-3" points="75.42 439.38 71.92 439.38 71.92 379.94 102.34 379.94 87.63 367.02 89.94 364.39 111.63 383.44 75.42 383.44 75.42 439.38"/>
+  <rect class="cls-26" x="350.95" y="209.9" width="205.02" height="148.99"/>
+  <g class="cls-30">
+    <g class="cls-2">
+      <rect class="cls-28" x="328.91" y="170.09" width="241.04" height="220.53" transform="translate(-79.97 262.28) rotate(-30)"/>
+    </g>
+  </g>
+  <rect class="cls-26" x="133.28" y="44.41" width="160.57" height="149.77"/>
+  <g class="cls-19">
+    <g class="cls-7">
+      <rect class="cls-11" x="108.07" y="15.77" width="202.94" height="198.98" transform="translate(-29.56 120.21) rotate(-30)"/>
+    </g>
+  </g>
+  <rect class="cls-29" x="133.28" y="209.9" width="201.95" height="148.99"/>
+  <g class="cls-18">
+    <g class="cls-4">
+      <rect class="cls-9" x="111.04" y="170.86" width="238.38" height="218.99" transform="translate(-109.33 152.67) rotate(-30)"/>
+    </g>
+  </g>
+  <rect class="cls-26" x="571.69" y="44.41" width="97.65" height="314.47"/>
+  <g class="cls-21">
+    <g class="cls-5">
+      <rect class="cls-8" x="501.09" y="42.54" width="230.79" height="310.16" transform="translate(-16.21 334.72) rotate(-30)"/>
+    </g>
+  </g>
+  <rect class="cls-29" x="309.57" y="44.41" width="246.4" height="149.77"/>
+  <g class="cls-23">
+    <g class="cls-6">
+      <rect class="cls-10" x="290.11" y="-5.69" width="277.27" height="241.9" transform="translate(-.19 229.81) rotate(-30)"/>
+    </g>
+  </g>
+  <rect class="cls-25" x="196.1" y="99" width="36.83" height="36.83"/>
+  <path d="M218.13,106.93c1.02.6,1.81,1.45,2.35,2.56.55,1.11.82,2.4.82,3.89,0,2.02-.5,3.68-1.5,4.97l-5.11,7.74h-4.82l3.55-5.43c-1.77-.23-3.16-.99-4.17-2.28-1.01-1.29-1.52-2.96-1.52-5,0-1.48.27-2.78.82-3.89.55-1.11,1.33-1.96,2.35-2.56,1.02-.6,2.22-.9,3.61-.9s2.59.3,3.61.9ZM212.59,116.16c.45.65,1.09.97,1.92.97s1.47-.32,1.92-.97c.45-.65.68-1.58.68-2.79s-.23-2.14-.68-2.79c-.45-.65-1.09-.97-1.92-.97s-1.47.32-1.92.97-.68,1.57-.68,2.79.23,2.14.68,2.79Z"/>
+  <rect class="cls-25" x="410.54" y="99" width="36.83" height="36.83"/>
+  <path d="M423.83,124.94c-1.22-1.03-1.83-2.44-1.83-4.23,0-2.46,1.12-4.09,3.35-4.88-.89-.37-1.58-.94-2.09-1.72-.51-.78-.77-1.73-.77-2.85,0-1.62.6-2.89,1.79-3.83,1.19-.93,2.75-1.4,4.68-1.4s3.49.47,4.68,1.4,1.79,2.21,1.79,3.83c0,1.12-.25,2.07-.77,2.85-.51.78-1.22,1.35-2.12,1.72,2.25.79,3.38,2.42,3.38,4.88,0,1.79-.61,3.2-1.83,4.23-1.22,1.03-2.93,1.55-5.13,1.55s-3.91-.51-5.13-1.55ZM427.02,122.37c.46.49,1.11.74,1.94.74s1.47-.25,1.94-.74c.46-.49.69-1.21.69-2.15,0-.87-.24-1.55-.71-2.05-.47-.5-1.11-.75-1.92-.75s-1.45.25-1.92.75c-.47.5-.71,1.18-.71,2.05,0,.94.23,1.66.69,2.15ZM427.34,113.49c.4.46.94.69,1.62.69s1.21-.23,1.6-.69.59-1.09.59-1.88-.2-1.34-.59-1.78c-.39-.43-.93-.65-1.6-.65s-1.24.22-1.63.65c-.4.43-.59,1.03-.59,1.78,0,.79.2,1.42.61,1.88Z"/>
+  <rect class="cls-25" x="600.66" y="179.56" width="36.83" height="36.83"/>
+  <path d="M620.06,190.81h-7.31v-3.81h13.12l-7.45,19.65h-4.68l6.33-15.83Z"/>
+  <rect class="cls-25" x="432.65" y="261.6" width="36.83" height="36.83"/>
+  <path d="M447.46,288.19c-1.02-.6-1.81-1.45-2.35-2.56s-.82-2.4-.82-3.89c0-2.02.5-3.68,1.5-4.97l5.11-7.74h4.83l-3.55,5.43c1.77.23,3.16.99,4.17,2.28,1.01,1.29,1.52,2.96,1.52,5,0,1.48-.27,2.78-.82,3.89s-1.33,1.96-2.35,2.56c-1.02.6-2.22.9-3.61.9s-2.59-.3-3.61-.9ZM449.15,284.54c.45.65,1.09.97,1.92.97s1.47-.32,1.92-.97c.45-.65.68-1.58.68-2.79s-.23-2.14-.68-2.79c-.45-.65-1.09-.97-1.92-.97s-1.47.32-1.92.97c-.45.65-.68,1.57-.68,2.79s.23,2.14.68,2.79Z"/>
+  <rect class="cls-25" x="215.14" y="261.6" width="36.83" height="36.83"/>
+  <path d="M228.82,287.44c-1.16-1.1-1.78-2.67-1.88-4.71h4.28c.06.89.29,1.57.69,2.04.4.47.98.71,1.73.71.81,0,1.43-.3,1.88-.91.44-.61.66-1.51.66-2.7s-.21-2.11-.64-2.76c-.42-.65-1.03-.97-1.82-.97-.6,0-1.1.15-1.52.45-.41.3-.7.74-.85,1.31h-4.1v-10.86h12.19v3.53h-8.29v4.04c.4-.6.91-1.04,1.53-1.31.62-.28,1.35-.42,2.2-.42,1.12,0,2.1.29,2.95.85.85.57,1.5,1.38,1.96,2.44.46,1.06.69,2.31.69,3.76s-.29,2.74-.87,3.81c-.58,1.08-1.38,1.91-2.41,2.49-1.03.58-2.21.87-3.54.87-2.08,0-3.7-.55-4.85-1.65Z"/>
+</svg>
