@@ -1,59 +1,89 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import TextBox from './TextBox';
 
 const HeaderContainer = styled.header`
   width: 100%;
   height: 180px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 0 36px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  pointer-events: none;
 `;
 
 const LogoBox = styled(Link)`
-  transform: rotate(-5deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  pointer-events: auto;
   img {
-    height: 100px;
+    transform: rotate(-7deg);
+    height: 70px;
     width: auto;
   }
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 73px;
+  justify-content: space-between;
+  pointer-events: auto;
 `;
 
 const MenuLink = styled(Link)`
   font-family: 'GT Walsheim', sans-serif;
-  font-weight: 700; /* Cn Bd 적용 */
-  font-size: 58px;
+  font-weight: 700;
+  font-size: 3.4rem;
   color: #000;
-  transition: color 0.2s;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.newGray};
-  }
 `;
 
 const Header = () => {
+  const location = useLocation();
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+
+  const menuItems = [
+    { name: 'About', path: '/about' },
+    { name: 'Lecture', path: '/lecture' },
+    { name: 'Exhibition', path: '/exhibition' },
+    { name: 'Archive', path: '/archive' },
+  ];
+
   return (
     <HeaderContainer>
       <LogoBox to="/">
-        <img src="src/assets/logo.svg" alt="See-Saw" />
+        <img src="/assets/logo.svg" alt="See-Saw" />
       </LogoBox>
       <Nav>
-        <MenuLink to="/about">About</MenuLink>
-        <MenuLink to="/lecture">Lecture</MenuLink>
-        <MenuLink to="/exhibition">Exhibition</MenuLink>
-        <MenuLink to="/archive">Archive</MenuLink>
+        {menuItems.map((item) => {
+          const isActive = location.pathname.startsWith(item.path);
+          const isHovered = hoveredMenu === item.name;
+
+          return (
+            <MenuLink
+              key={item.name}
+              to={item.path}
+              onMouseEnter={() => setHoveredMenu(item.name)}
+              onMouseLeave={() => setHoveredMenu(null)}
+            >
+              {isActive || isHovered ? (
+                <TextBox fontSize="3.4rem" paddingType="narrow" rotate={-7}>
+                  {item.name}
+                </TextBox>
+              ) : (
+                <div
+                  style={{
+                    padding: '0.1em 0.57em',
+                    fontFamily: "'GT Walsheim', sans-serif",
+                  }}
+                >
+                  {item.name}
+                </div>
+              )}
+            </MenuLink>
+          );
+        })}
       </Nav>
     </HeaderContainer>
   );

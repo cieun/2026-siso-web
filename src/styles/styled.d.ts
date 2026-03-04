@@ -8,9 +8,14 @@ declare module 'styled-components' {
       redShimmer: string;
       digitalYellow: string;
       lasPalmas: string;
+      lemony: string;
       oceanWater: string;
       sportyPink: string;
+      smoothPink: string;
+      babyBlueEyes: string;
       newGray: string;
+      intenseAzure: string;
+      solidPeach: string;
     };
     mobile: string;
     tablet: string;

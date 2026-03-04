@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 415.06 245.95">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        mask: url(#mask);
+      }
+
+      .cls-3 {
+        filter: url(#luminosity-noclip);
+      }
+
+      .cls-4 {
+        fill: url(#_무제_그라디언트_3);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        fill: #231815;
+        font-family: GTWalsheim-CondensedBold, 'GT Walsheim';
+        font-size: 38.26px;
+        font-weight: 700;
+      }
+
+      .cls-8 {
+        fill: #00cadc;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="-9" y="-28" width="408.5" height="246.13"/>
+    </clipPath>
+    <filter id="luminosity-noclip" x="-131.96" y="-232.07" width="654.42" height="654.28" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <linearGradient id="_무제_그라디언트_3" data-name="무제 그라디언트 3" x1="669.05" y1="847.68" x2="670.05" y2="847.68" gradientTransform="translate(362631.55 286380.48) rotate(-90) scale(427.56 -427.56)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="-131.96" y="-232.07" width="654.42" height="654.28" maskUnits="userSpaceOnUse">
+      <g class="cls-3">
+        <rect class="cls-4" x="-34.94" y="-137.53" width="460.39" height="465.2" transform="translate(-8.51 170.19) rotate(-46.2)"/>
+      </g>
+    </mask>
+    <clipPath id="clippath-1">
+      <rect class="cls-1" x="-9" y="-28" width="408.5" height="246.13"/>
+    </clipPath>
+  </defs>
+  <polygon class="cls-8" points="0 0 0 216.55 28.48 245.95 415.06 245.95 415.06 43.07 390.34 0 0 0"/>
+  <g class="cls-9">
+    <g class="cls-2">
+      <g class="cls-5">
+        <rect class="cls-6" x="0" y="0" width="390.5" height="217.13"/>
+      </g>
+    </g>
+  </g>
+  <rect class="cls-6" x="174.76" y="80.96" width="49.32" height="49.32"/>
+  <rect class="cls-6" x="182.03" y="86.49" width="34.79" height="38.26"/>
+  <text class="cls-7" transform="translate(189.91 117.1)"><tspan x="0" y="0">S</tspan></text>
+</svg>
