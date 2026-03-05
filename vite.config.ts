@@ -8,7 +8,6 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            // node_modules 안에 있는 라이브러리들을 각각의 이름으로 쪼개버립니다.
             return id
               .toString()
               .split('node_modules/')[1]

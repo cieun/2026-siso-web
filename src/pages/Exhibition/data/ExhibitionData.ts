@@ -1,3 +1,13 @@
+import seesaw1 from '../assets/seesaw_1.svg';
+import seesaw2 from '../assets/seesaw_2.svg';
+import seesaw3 from '../assets/seesaw_3.svg';
+import seesaw4 from '../assets/seesaw_4.svg';
+import seesaw5 from '../assets/seesaw_5.svg';
+import seesaw6 from '../assets/seesaw_6.svg';
+import seesaw7 from '../assets/seesaw_7.svg';
+import seesaw8 from '../assets/seesaw_8.svg';
+import seesaw9 from '../assets/seesaw_9.svg';
+
 export const exhibitionData = [
   {
     id: 'greenbee',
@@ -7,7 +17,7 @@ export const exhibitionData = [
     top: '5vh',
     left: '5vw',
     rotate: 0,
-    svg: 'src/pages/Exhibition/assets/seesaw_3.svg',
+    svg: seesaw3,
     width: '32vw',
     mobileWidth: '78vw',
     namePos: { top: '55%', left: '-8%', rotate: 5 },
@@ -22,7 +32,7 @@ export const exhibitionData = [
     fieldEn: 'Video',
     top: '0',
     left: '60vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_2.svg',
+    svg: seesaw2,
     width: '33vw',
     mobileWidth: '80vw',
     namePos: { top: '47%', left: '50%', rotate: -35 },
@@ -32,12 +42,12 @@ export const exhibitionData = [
   },
   {
     id: 'iray',
-    name: 'I-ray',
+    name: 'I-ay',
     fieldKo: '3D 그래픽',
     fieldEn: '3D Graphic',
     top: '50vh',
     left: '38vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_4.svg',
+    svg: seesaw4,
     width: '33vw',
     mobileWidth: '80vw',
     namePos: { top: '9%', left: '19%', rotate: 25 },
@@ -52,7 +62,7 @@ export const exhibitionData = [
     fieldEn: 'Illustration',
     top: '78vh',
     left: '0',
-    svg: 'src/pages/Exhibition/assets/seesaw_1.svg',
+    svg: seesaw1,
     width: '33vw',
     mobileWidth: '82vw',
     namePos: { top: '55%', left: '70%', rotate: -45 },
@@ -67,7 +77,7 @@ export const exhibitionData = [
     fieldEn: 'Advertisement',
     top: '74vh',
     left: '62vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_5.svg',
+    svg: seesaw5,
     width: '34vw',
     mobileWidth: '83vw',
     namePos: { top: '45%', left: '32%', rotate: -7 },
@@ -82,7 +92,7 @@ export const exhibitionData = [
     fieldEn: 'Interaction Design',
     top: '115vh',
     left: '33vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_6.svg',
+    svg: seesaw6,
     width: '33vw',
     mobileWidth: '80vw',
     namePos: { top: '45%', left: '0%', rotate: 5 },
@@ -97,7 +107,7 @@ export const exhibitionData = [
     fieldEn: 'Visual Environment Design',
     top: '150vh',
     left: '5vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_7.svg',
+    svg: seesaw7,
     width: '32vw',
     mobileWidth: '77vw',
     namePos: { top: '5%', left: '-10%', rotate: 5 },
@@ -112,7 +122,7 @@ export const exhibitionData = [
     fieldEn: 'Typography',
     top: '155vh',
     left: '60vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_8.svg',
+    svg: seesaw8,
     width: '34vw',
     mobileWidth: '84vw',
     namePos: { top: '0%', left: '48%', rotate: 5 },
@@ -127,7 +137,7 @@ export const exhibitionData = [
     fieldEn: 'Photography',
     top: '175vh',
     left: '35vw',
-    svg: 'src/pages/Exhibition/assets/seesaw_9.svg',
+    svg: seesaw9,
     width: '32vw',
     mobileWidth: '77vw',
     namePos: { top: '52%', left: '30%', rotate: 45 },
