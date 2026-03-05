@@ -3,8 +3,6 @@ import GTWalsheimCnBd from '../assets/fonts/GT-Walsheim-Condensed-Bold.woff2';
 import GTWalsheimCnMd from '../assets/fonts/GT-Walsheim-Condensed-Medium.woff2';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://cdn.jsdelivr.net/gh/fonts-archive/AppleSDGothicNeo/AppleSDGothicNeo.css');
-
     @font-face {
         font-family: 'GT Walsheim';
         src: url(${GTWalsheimCnBd}) format('woff2');
