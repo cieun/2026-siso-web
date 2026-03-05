@@ -42,6 +42,7 @@ const GuideContent = styled.div`
   flex-direction: column;
   position: relative;
   gap: 10px;
+  width: 100%;
 `;
 
 const InfoContent = styled.div`

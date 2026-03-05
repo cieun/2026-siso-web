@@ -7,10 +7,11 @@ import EventSectionMobile from './components/mobile/EventSectionMobile';
 import CommitteeSectionMobile from './components/mobile/CommitteeSectionMobile';
 
 const PageWrapper = styled.div<{ $isWhiteBg: boolean }>`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
   overflow-y: auto;
+  overflow-x: hidden;
 
   background-color: ${({ theme }) => theme.colors.background};
 

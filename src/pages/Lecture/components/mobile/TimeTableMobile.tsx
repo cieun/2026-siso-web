@@ -54,7 +54,19 @@ const GridContainer = styled.div`
   position: relative;
   width: 100%;
   height: 25vh;
+  border-top: #000 2px solid;
+  border-bottom: #000 2px solid;
+
   background-image: ${generateGridLines([
+    '1-0',
+    '2-0',
+    '3-0',
+    '4-0',
+    '1-4',
+    '2-4',
+    '3-4',
+    '4-4',
+
     '1-1',
     '1-2',
     '1-3',
@@ -115,7 +127,7 @@ const TimeBlock = styled.div<{
 
   width: ${({ $isHalf }) =>
     $isHalf ? 'calc(12.5% - 8px)' : 'calc(25% - 8px)'};
-  height: 11vh;
+  height: ${({ $height }) => $height}vh;
 
   background: ${({ $color }) =>
     `linear-gradient(140deg, ${$color} 0%, #fff 100%)`};
@@ -172,56 +184,56 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 1,
       name: 'HIPS',
       color: theme.colors.redShimmer,
-      top: 0.2,
-      height: 12,
+      top: 0,
+      height: 11.2,
       col: 1,
     },
     {
       id: 2,
       name: 'PROTO',
       color: theme.colors.solidPeach,
-      top: 12.3,
-      height: 12,
+      top: 12.5,
+      height: 11.2,
       col: 1,
     },
     {
       id: 3,
       name: 'HYPHEN',
       color: theme.colors.lasPalmas,
-      top: 0.2,
-      height: 12,
+      top: 0,
+      height: 11.2,
       col: 2,
     },
     {
       id: 4,
       name: 'Dromapic',
       color: theme.colors.lemony,
-      top: 12.3,
-      height: 12,
+      top: 12.5,
+      height: 11.2,
       col: 2,
     },
     {
       id: 5,
       name: 'I-Ray',
       color: theme.colors.sportyPink,
-      top: 0.2,
-      height: 12,
+      top: 0,
+      height: 11.2,
       col: 3,
     },
     {
       id: 6,
       name: 'ADrenalin',
       color: theme.colors.smoothPink,
-      top: 12.3,
-      height: 12,
+      top: 12.5,
+      height: 11.2,
       col: 3,
     },
     {
       id: 7,
       name: 'Greenbee',
       color: theme.colors.intenseAzure,
-      top: 0.2,
-      height: 12,
+      top: 0,
+      height: 11.2,
       col: 4,
       $isHalf: true,
       $halfPos: 'left',
@@ -230,8 +242,8 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 8,
       name: 'Hangulggol',
       color: theme.colors.babyBlueEyes,
-      top: 0.2,
-      height: 12,
+      top: 0,
+      height: 11.2,
       col: 4,
       $isHalf: true,
       $halfPos: 'right',
@@ -240,8 +252,8 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 9,
       name: 'YADZ',
       color: theme.colors.digitalYellow,
-      top: 12.3,
-      height: 12,
+      top: 12.5,
+      height: 11.2,
       col: 4,
     },
   ];

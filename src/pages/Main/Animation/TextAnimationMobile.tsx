@@ -20,11 +20,10 @@ const TextContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 120px 24px 24px 24px;
+  padding: 90px 24px 24px 24px;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
 `;
 
 const TextAnimationMobile = () => {
@@ -40,11 +39,11 @@ const TextAnimationMobile = () => {
   };
 
   const boxData = [
-    { src: Box1, x: 96, y: 81, scale: 0.84 },
-    { src: Box2, x: 78, y: 99, scale: 1.93 },
-    { src: Box3, x: 141, y: 118, scale: 4.1 },
-    { src: Box4, x: 82, y: 148, scale: 4.3 },
-    { src: Box5, x: 78, y: 186, scale: 2 },
+    { src: Box1, x: 88, y: 62, scale: 0.8 },
+    { src: Box2, x: 71, y: 78, scale: 1.85 },
+    { src: Box3, x: 128, y: 94, scale: 4.0 },
+    { src: Box4, x: 76, y: 122, scale: 4.3 },
+    { src: Box5, x: 70, y: 155, scale: 2 },
   ];
 
   interface BoxAnimation {
@@ -250,7 +249,7 @@ const TextAnimationMobile = () => {
                 <img
                   src={data.src}
                   alt={`Label-${i}`}
-                  style={{ display: 'block', width: '65px' }}
+                  style={{ display: 'block', width: '60px' }}
                 />
               </motion.div>
             );
@@ -269,8 +268,8 @@ const TextAnimationMobile = () => {
           />
         </motion.div>
       </TextContainer>
-      <div style={{ position: 'fixed', bottom: '24px', left: '24px' }}>
-        <img src={Guide} style={{ width: '390px', display: 'none' }} />
+      <div style={{ position: 'fixed', top: '120px', left: '24px' }}>
+        <img src={Guide} style={{ width: '350px', display: 'none' }} />
       </div>
     </>
   );
