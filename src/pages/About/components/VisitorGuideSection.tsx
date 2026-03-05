@@ -78,89 +78,6 @@ const PositionWrapper = styled.div<{
   cursor: ${({ $cursor }) => $cursor || 'default'};
 `;
 
-// const BuildingContainer = styled.div<{
-//   $top?: string;
-//   $bottom?: string;
-//   $left?: string;
-//   $right?: string;
-// }>`
-//   width: 280px;
-//   height: 280px;
-//   position: absolute;
-//   top: ${({ $top }) => $top || '0'};
-//   //   bottom: ${({ $bottom }) => $bottom || '0'};
-//   //   left: ${({ $left }) => $left || '0'};
-//   right: ${({ $right }) => $right || '0'};
-// `;
-
-// const BuildingImage = styled.img`
-//   width: 300px;
-//   height: auto;
-//   position: absolute;
-// `;
-
-// const ModalOverlay = styled.div`
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-//   background: rgba(0, 0, 0, 0.3);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   z-index: 1000;
-// `;
-
-// const MapModal = styled.div`
-//   position: relative;
-//   width: 60vw;
-//   max-width: 800px;
-//   aspect-ratio: 1.4 / 1;
-//   background: ${({ theme }) =>
-//     `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
-//   border-radius: 40px;
-//   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 40px;
-//   animation: modalShow 0.3s ease-out;
-
-//   @keyframes modalShow {
-//     from {
-//       opacity: 0;
-//       transform: scale(0.9);
-//     }
-//     to {
-//       opacity: 1;
-//       transform: scale(1);
-//     }
-//   }
-// `;
-
-// const CloseButton = styled.button`
-//   position: absolute;
-//   top: 30px;
-//   right: 30px;
-//   background: none;
-//   border: none;
-//   font-size: 3.2rem;
-//   font-weight: 800;
-//   cursor: pointer;
-//   color: #000;
-//   z-index: 1001;
-// `;
-
-// const FullMapImage = styled.img`
-//   width: 100%;
-//   height: auto;
-//   object-fit: contain;
-//   position: relative;
-//   top: -30px;
-//   left: 40px;
-// `;
-
 // 오른쪽 단
 
 const RightColumn = styled.div`
@@ -246,7 +163,6 @@ const TeamName = styled.span`
 const VisitorGuideSection = () => {
   const mapImages = [mapR, mapS];
   const hoverImages = [mapR1f, mapS3f];
-  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
 
@@ -267,14 +183,7 @@ const VisitorGuideSection = () => {
               subTitle={visitorGuideData.subTitle}
             />
           </PositionWrapper>
-          <PositionWrapper
-            $top="134px"
-            $left="230px"
-            // onClick={() => setIsModalOpen(true)}
-          >
-            {/* <TextBox fontSize="1.8rem">
-            <u>{visitorGuideData.mapNavigator}</u>
-          </TextBox> */}
+          <PositionWrapper $top="134px" $left="230px">
             <TextBox fontSize="1.8rem" width="80px">
               <img src={arrow} style={{ width: '100%', display: 'block' }} />
             </TextBox>
@@ -294,36 +203,12 @@ const VisitorGuideSection = () => {
         <SchoolMap>
           <img src={schooMap} style={{ height: '100%' }} />
         </SchoolMap>
-        {/* {visitorGuideData.buildings.map((name, idx) => {
-          const layout = BUILDING_LAYOUTS[idx];
-          return (
-            <BuildingContainer
-              key={idx}
-              $top={layout.pos.top}
-              //   $bottom={layout.pos.bottom}
-              //   $left={layout.pos.left}
-              $right={layout.pos.right}
-            >
-              <PositionWrapper
-                $top={layout.labelPos.top}
-                //   $bottom={layout.pos.bottom}
-                //   $left={layout.pos.left}
-                $right={layout.labelPos.right}
-              >
-                <TextBox paddingType="narrow" fontSize="2rem">
-                  {name}
-                </TextBox>
-              </PositionWrapper>
-              <BuildingImage src={layout.image} alt={`${name} 지도`} />
-            </BuildingContainer>
-          );
-        })} */}
       </GuideContent>
 
       {/* 오른쪽 단 */}
       <RightColumn>
         {visitorGuideData.buildingLists.map((group, idx) => {
-          const isActivated = activeIndices.includes(idx); // 💡 현재 활성화된 상태인지 확인
+          const isActivated = activeIndices.includes(idx);
           const layout = BUILDING_LAYOUTS[idx];
 
           return (
@@ -368,17 +253,6 @@ const VisitorGuideSection = () => {
           );
         })}
       </RightColumn>
-
-      {/* 모달창 */}
-      {/* {isModalOpen && (
-        <ModalOverlay onClick={() => setIsModalOpen(false)}>
-          <MapModal onClick={(e) => e.stopPropagation()}>
-            {' '}
-            <CloseButton onClick={() => setIsModalOpen(false)}>X</CloseButton>
-            <FullMapImage src={schooMap} alt="전체 학교 지도" />
-          </MapModal>
-        </ModalOverlay>
-      )} */}
     </SectionContainer>
   );
 };

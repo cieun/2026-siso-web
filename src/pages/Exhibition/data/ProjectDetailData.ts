@@ -1,5 +1,5 @@
 import greenbeePoster from '../assets/greenbee_poster.jpg';
-// import dromapicPoster from '../assets/dromapic_poster.jpg';
+import dromapicPoster from '../assets/dromapic_poster.jpg';
 import irayPoster from '../assets/iray_poster.jpg';
 import yadzPoster from '../assets/yadz_poster.jpg';
 import adrenalinPoster from '../assets/adrenalin_poster.jpg';
@@ -61,7 +61,7 @@ export const projectDetailData: { [key: string]: any } = {
   },
   dromapic: {
     clubName: 'Dromapic',
-    posterUrl: greenbeePoster,
+    posterUrl: dromapicPoster,
     introduction: `드로마픽은 1996년도 설립되어 올해로 30주년을 맞는 홍익대학교 시각디자인과의 영상 소모임이다. 실사 영상을 중심으로 2D, 3D 애니메이션, VFX 등 영상으로 제작되는 디자인적 매체 전반을 다루며, 영화, 뮤직비디오, 실험 대안적 영상, 아트필름, CF 등의 형태로 작품을 표현한다. 다양한 프로그램과 장비들을 배우고, 각종 용어와 시나리오에 대한 훈련을 통해 영상 문법을 이용하여 개인 혹은 팀으로서 다양한 이야기를 할 수 있는 능력을 가지게 되는 것을 목표로 하고 있다.`,
     exhibitionTitle: '벽에 대고 말하기',
     description: `우리가 사는 이 곳은 각 개인의 서사와 장면, 시선이 모인 하나의 세계이다. 분리된 듯 보이는 사람과 사물은 서로 영향을 주고받으며 이 세계를 이어나간다. 각자는 서로에게 이입하고, 소통하며 분절된 세계의 벽을 넘나들어 연결된다. 영상 예술은 서로 다른 조각을 자르고 이어붙여 화면 속 움직이는 하나의 새로운 세계를 만든다. 이 허구의 세계가 마치 실재하는 듯, 우리는 벽 너머의 관객에게 말을 건넨다.\n마침내 화면이 암전 되어도, 벽 너머의 세계는 여전히 존재한다.`,

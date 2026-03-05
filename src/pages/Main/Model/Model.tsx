@@ -58,7 +58,6 @@ const Model = ({
   useEffect(() => {
     const target = groupRef.current;
     if (!target) return;
-
     const isDot = url.includes('dot');
     const isBar = url.includes('bar');
 
@@ -169,9 +168,7 @@ const Model = ({
 
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
-      // gamma는 기기를 좌우로 흔들 때의 값입니다 (-90 ~ 90)
       if (e.gamma !== null) {
-        // -30도 ~ 30도 범위를 -1 ~ 1 사이의 값으로 변환
         tiltX = THREE.MathUtils.clamp(e.gamma / 30, -1, 1);
       }
     };
@@ -183,11 +180,11 @@ const Model = ({
 
   useFrame((state) => {
     const isDot = url.includes('dot');
+
     if (!isInteractive || !isAnimationFinished || !groupRef.current || isDot)
       return;
 
     const inputX = Math.abs(tiltX) > 0.01 ? tiltX : state.mouse.x;
-
     const minDeg = -5;
     const maxDeg = 15;
     const mouseRad = THREE.MathUtils.degToRad(

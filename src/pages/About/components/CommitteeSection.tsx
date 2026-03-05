@@ -58,7 +58,7 @@ const StaffItem = styled.div`
 `;
 
 const Role = styled.span`
-  width: 100px; /* 역할 이름 폭 고정 */
+  width: 100px;
   color: #000;
 `;
 

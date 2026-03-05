@@ -138,7 +138,7 @@ interface TimeBlockData {
   top: number;
   height: number;
   col: number;
-  $isHalf?: boolean; // 💡 선택적 속성으로 추가
+  $isHalf?: boolean;
   $halfPos?: 'left' | 'right';
 }
 

@@ -126,7 +126,7 @@ const TimeBlock = styled.div<{
     $isHalf && $halfPos === 'right' && `margin-left: calc(12.6%);`}
 
   width: ${({ $isHalf }) =>
-    $isHalf ? 'calc(12.5% - 8px)' : 'calc(25% - 8px)'};
+    $isHalf ? 'calc(12.4% - 8px)' : 'calc(25% - 8px)'};
   height: ${({ $height }) => $height}vh;
 
   background: ${({ $color }) =>
@@ -192,7 +192,7 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 2,
       name: 'PROTO',
       color: theme.colors.solidPeach,
-      top: 12.5,
+      top: 12.4,
       height: 11.2,
       col: 1,
     },
@@ -208,7 +208,7 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 4,
       name: 'Dromapic',
       color: theme.colors.lemony,
-      top: 12.5,
+      top: 12.4,
       height: 11.2,
       col: 2,
     },
@@ -224,7 +224,7 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 6,
       name: 'ADrenalin',
       color: theme.colors.smoothPink,
-      top: 12.5,
+      top: 12.4,
       height: 11.2,
       col: 3,
     },
@@ -252,7 +252,7 @@ const TimeTableMobile = ({ onSelectLecture }: TimeTableProps) => {
       id: 9,
       name: 'YADZ',
       color: theme.colors.digitalYellow,
-      top: 12.5,
+      top: 12.4,
       height: 11.2,
       col: 4,
     },

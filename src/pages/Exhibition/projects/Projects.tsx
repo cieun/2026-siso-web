@@ -81,12 +81,6 @@ const InfoSection = styled.div`
   overflow-y: scroll;
 `;
 
-// const DetailGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: 5fr 1fr;
-//   gap: 20px;
-// `;
-
 const ExhibitionTitle = styled.div`
   font-size: 2rem;
   margin-bottom: 20px;
@@ -115,18 +109,6 @@ const ParticipantsGrid = styled.div`
   margin-bottom: 15px;
   word-spacing: 0.5rem;
 `;
-
-// const ClubInstagramId = styled.span`
-//   margin-bottom: 20px;
-// `;
-
-// const ClubInsagramLink = styled.a`
-//   font-weight: 800;
-//   font-size: 1.4rem;
-//   text-decoration: underline;
-//   text-decoration-thickness: 1.5px;
-//   text-underline-offset: 4px;
-// `;
 
 const Projects = () => {
   const location = useLocation();
@@ -202,24 +184,6 @@ const Projects = () => {
                 </ParticipantsGrid>
               </div>
             </div>
-
-            {/* <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '20px',
-                }}
-              >
-                <ClubInstagramId>
-                  <ClubInsagramLink
-                    href={currentData.instagramLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    @{currentData.instagram}
-                  </ClubInsagramLink>
-                </ClubInstagramId>
-              </div> */}
           </InfoSection>
         </ContentContainer>
         <Footer />
