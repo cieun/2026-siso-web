@@ -20,7 +20,7 @@ const TextContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 90px 24px 24px 24px;
+  padding: 60px 24px 24px 24px;
   z-index: 10;
   display: flex;
   flex-direction: column;

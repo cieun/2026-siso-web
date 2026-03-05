@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 
 let isGlobalFirstRender = true;
+let tiltX = 0;
 
 gsap.registerPlugin(CustomEase);
 
@@ -36,7 +37,6 @@ const Model = ({
   const clonedScene = useMemo(() => scene.clone(), [scene]);
   const [isAnimationFinished, setIsAnimationFinished] = useState(false);
 
-  // 💡 메쉬 재질 및 렌더링 설정
   useEffect(() => {
     clonedScene.traverse((child) => {
       if (child instanceof THREE.Mesh) {
@@ -55,7 +55,6 @@ const Model = ({
     });
   }, [clonedScene]);
 
-  // 💡 메인 애니메이션 로직
   useEffect(() => {
     const target = groupRef.current;
     if (!target) return;
@@ -63,18 +62,16 @@ const Model = ({
     const isDot = url.includes('dot');
     const isBar = url.includes('bar');
 
-    // [초기 위치/스케일 설정]
     if (isGlobalFirstRender && visible) {
       target.position.set(position[0], position[1] + 6, position[2]);
       target.scale.set(0, 0, 0);
       target.rotation.set(rotation[0], rotation[1], rotation[2]);
     } else {
       target.position.set(position[0], position[1], position[2]);
-      target.scale.set(0, 0, 0); // 일단 모두 0으로 시작 (두 번째 useEffect에서 키워줄 거예요)
+      target.scale.set(0, 0, 0);
       target.rotation.set(rotation[0], rotation[1], rotation[2]);
     }
 
-    // [첫 렌더링 전용 화려한 등장]
     if (isGlobalFirstRender && visible) {
       if (isDot) {
         gsap.to(target.scale, {
@@ -86,8 +83,6 @@ const Model = ({
           delay: isDot ? 0 : 0.2,
         });
 
-        // target.position.x = position[0] - 5;
-        // target.position.z = position[2] + 2;
         target.rotation.set(
           rotation[0] - Math.PI * 0.5,
           rotation[1] - Math.PI * 4,
@@ -115,17 +110,14 @@ const Model = ({
           ease: 'power0.in',
         });
       } else {
-        // 💡 1. Bar와 Arc는 낙하 애니메이션 시작 전까지 scale을 0으로 꽉 묶어둡니다.
         target.scale.set(0, 0, 0);
 
         gsap.to(target.position, {
           y: position[1],
           duration: isBar ? 0.8 : 1.2,
           ease: 'elastic.out(0.5, 0.8)',
-          delay: 2.8, // 💡 Dot이 안착할 때까지 기다리는 시간
+          delay: 2.8,
           onStart: () => {
-            // 💡 2. [핵심] 실제로 낙하가 시작되는 순간에만 scale을 키웁니다.
-            // 이렇게 하면 공중에 떠 있는 동안(2.8초)에는 절대 보이지 않아요!
             gsap.to(target.scale, {
               x: scale,
               y: scale,
@@ -152,11 +144,10 @@ const Model = ({
 
   useEffect(() => {
     const target = groupRef.current;
-    if (!target || isGlobalFirstRender) return; // 첫 낙하 중에는 실행 안 함
+    if (!target || isGlobalFirstRender) return;
 
     if (visible) {
       target.rotation.set(rotation[0], rotation[1], rotation[2]);
-      // 나타날 때 (Scale Up)
       gsap.to(target.scale, {
         x: scale,
         y: scale,
@@ -166,7 +157,6 @@ const Model = ({
         delay: url.includes('dot') ? 0 : 0.1,
       });
     } else {
-      // 사라질 때 (Scale Down)
       gsap.to(target.scale, {
         x: 0,
         y: 0,
@@ -177,25 +167,35 @@ const Model = ({
     }
   }, [visible, scale, url, rotation]);
 
-  // 💡 마우스 인터랙션
+  useEffect(() => {
+    const handleOrientation = (e: DeviceOrientationEvent) => {
+      // gamma는 기기를 좌우로 흔들 때의 값입니다 (-90 ~ 90)
+      if (e.gamma !== null) {
+        // -30도 ~ 30도 범위를 -1 ~ 1 사이의 값으로 변환
+        tiltX = THREE.MathUtils.clamp(e.gamma / 30, -1, 1);
+      }
+    };
+
+    window.addEventListener('deviceorientation', handleOrientation);
+    return () =>
+      window.removeEventListener('deviceorientation', handleOrientation);
+  }, []);
+
   useFrame((state) => {
     const isDot = url.includes('dot');
     if (!isInteractive || !isAnimationFinished || !groupRef.current || isDot)
       return;
 
-    const mouseX = state.mouse.x;
+    const inputX = Math.abs(tiltX) > 0.01 ? tiltX : state.mouse.x;
 
-    // 💡 마우스 움직임에 따른 추가 각도 (기존 -5~10도 범위)
     const minDeg = -5;
     const maxDeg = 15;
     const mouseRad = THREE.MathUtils.degToRad(
-      minDeg + (mouseX + 1) * ((maxDeg - minDeg) / 2),
+      minDeg + (inputX + 1) * ((maxDeg - minDeg) / 2),
     );
 
-    // 💡 [핵심] 기본 데이터의 z축 값(rotation[2])에 마우스 각도를 더합니다.
     const targetRad = rotation[2] + mouseRad;
 
-    // 부드럽게 따라오도록 보간(Lerp) 적용
     groupRef.current.rotation.z = THREE.MathUtils.lerp(
       groupRef.current.rotation.z,
       targetRad,

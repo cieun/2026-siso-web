@@ -33,7 +33,7 @@ const AdaptiveZoom = () => {
       let newZoom = 160;
 
       if (width < 440) {
-        newZoom = 48;
+        newZoom = 44;
       } else if (width < 768) {
         newZoom = 80;
       } else if (width < 1200) {
@@ -56,7 +56,21 @@ const MainMobile = () => {
   const [index, setIndex] = useState(0);
 
   const handleCanvasClick = () => {
-    setIndex((prev) => (prev + 1) % OBJECT_SETS.length);
+    if (
+      typeof DeviceOrientationEvent !== 'undefined' &&
+      typeof (DeviceOrientationEvent as any).requestPermission === 'function'
+    ) {
+      (DeviceOrientationEvent as any)
+        .requestPermission()
+        .then((permissionState: string) => {
+          if (permissionState === 'granted') {
+            setIndex((prev) => (prev + 1) % OBJECT_SETS.length);
+          }
+        })
+        .catch(console.error);
+    } else {
+      setIndex((prev) => (prev + 1) % OBJECT_SETS.length);
+    }
   };
 
   return (
