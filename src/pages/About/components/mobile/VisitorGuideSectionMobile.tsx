@@ -48,7 +48,7 @@ const GuideContent = styled.div`
 const InfoContent = styled.div`
   position: relative;
   width: 100%;
-  height: 35vh;
+  height: 40vh;
 `;
 
 const SchoolMap = styled.div`

@@ -19,6 +19,7 @@ const TitleContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 100px 0 80px 0;
+  font-weight: 800;
 
   @media (min-width: 400px) and (max-width: 768px) {
     && span.content-text {

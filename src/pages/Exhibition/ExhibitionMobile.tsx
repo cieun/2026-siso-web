@@ -6,13 +6,16 @@ import Footer from '../../components/common/Footer';
 
 const ExhibitionWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   background: ${({ theme }) =>
     `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
 
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow-x: hidden;
-  padding: 0 36px;
+  padding: 0 24px;
 `;
 const ObjectSection = styled.div`
   width: 100%;

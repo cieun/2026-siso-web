@@ -10,10 +10,14 @@ import { useThree } from '@react-three/fiber';
 
 const MainContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   background: ${({ theme }) =>
     `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;

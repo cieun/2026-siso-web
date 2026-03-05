@@ -9,6 +9,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   background: ${({ theme }) =>
     `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
   z-index: 2000;
@@ -16,6 +17,7 @@ const Overlay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const HeaderContainer = styled.header`

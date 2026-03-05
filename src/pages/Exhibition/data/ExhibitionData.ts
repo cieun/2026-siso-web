@@ -19,11 +19,11 @@ export const exhibitionData = [
     rotate: 0,
     svg: seesaw3,
     width: '32vw',
-    mobileWidth: '78vw',
+    mobileWidth: '79vw',
     namePos: { top: '55%', left: '-8%', rotate: 5 },
     fieldPos: { top: '40%', left: '0%', rotate: -15 },
-    namePosMobile: { top: '50%', left: '-3%', rotate: 5 },
-    fieldPosMobile: { top: '34%', left: '2%', rotate: -15 },
+    namePosMobile: { top: '50%', left: '0%', rotate: 5 },
+    fieldPosMobile: { top: '34%', left: '5%', rotate: -15 },
   },
   {
     id: 'dromapic',
@@ -68,7 +68,7 @@ export const exhibitionData = [
     namePos: { top: '55%', left: '70%', rotate: -45 },
     fieldPos: { top: '30%', left: '10%', rotate: 20 },
     namePosMobile: { top: '52%', left: '70%', rotate: -45 },
-    fieldPosMobile: { top: '30%', left: '10%', rotate: 20 },
+    fieldPosMobile: { top: '30%', left: '5%', rotate: 20 },
   },
   {
     id: 'adrenalin',

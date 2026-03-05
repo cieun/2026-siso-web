@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 421.34 465.21">
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 421.2 465.2">
   <defs>
     <style>
       .cls-1 {
@@ -15,62 +15,77 @@
       }
 
       .cls-4 {
-        fill: #231815;
-        font-family: GTWalsheim-CondensedBold, 'GT Walsheim';
-        font-size: 32.78px;
-        font-weight: 700;
+        fill: url(#_무제_그라디언트_2);
       }
 
       .cls-5 {
-        fill: url(#_무제_그라디언트_3);
-      }
-
-      .cls-6 {
         clip-path: url(#clippath-1);
       }
 
+      .cls-6 {
+        clip-path: url(#clippath-3);
+      }
+
       .cls-7 {
-        fill: #fff;
+        clip-path: url(#clippath-2);
       }
 
       .cls-8 {
-        fill: #00cadc;
+        fill: #fff;
       }
 
       .cls-9 {
+        opacity: .7;
+      }
+
+      .cls-10 {
+        fill: #00cadc;
+      }
+
+      .cls-11 {
         clip-path: url(#clippath);
       }
     </style>
     <clipPath id="clippath">
-      <rect class="cls-1" x="-8.09" y="-27.95" width="438.09" height="461.47"/>
+      <rect class="cls-1" width="430.34" height="770.57"/>
     </clipPath>
-    <filter id="luminosity-noclip" x="-238.82" y="-247" width="899.56" height="899.56" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <clipPath id="clippath-1">
+      <rect class="cls-1" width="430.34" height="770.57"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-1" x="-8.11" y="-28" width="438.09" height="461.47"/>
+    </clipPath>
+    <filter id="luminosity-noclip" x="-238.85" y="-247.04" width="899.56" height="899.56" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-color="#fff" result="bg"/>
       <feBlend in="SourceGraphic" in2="bg"/>
     </filter>
-    <linearGradient id="_무제_그라디언트_3" data-name="무제 그라디언트 3" x1="683.67" y1="1372.36" x2="684.67" y2="1372.36" gradientTransform="translate(866836.68 432258.96) rotate(-90) scale(631.49 -631.49)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="_무제_그라디언트_2" data-name="무제 그라디언트 2" x1=".7" y1="501.29" x2="1.7" y2="501.29" gradientTransform="translate(316770.14 972.57) rotate(-90) scale(631.49 -631.49)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fff"/>
       <stop offset="1" stop-color="#000"/>
     </linearGradient>
-    <mask id="mask" x="-238.82" y="-247" width="899.56" height="899.56" maskUnits="userSpaceOnUse">
+    <mask id="mask" x="-238.85" y="-247.04" width="899.56" height="899.56" maskUnits="userSpaceOnUse">
       <g class="cls-3">
-        <rect class="cls-5" x="-107.08" y="-115.26" width="636.08" height="636.08" transform="translate(-81.6 208.56) rotate(-45)"/>
+        <rect class="cls-4" x="-107.11" y="-115.31" width="636.08" height="636.08" transform="translate(-81.57 208.53) rotate(-45)"/>
       </g>
     </mask>
-    <clipPath id="clippath-1">
-      <rect class="cls-1" x="-8.09" y="-27.95" width="438.09" height="461.47"/>
+    <clipPath id="clippath-3">
+      <rect class="cls-1" x="-8.11" y="-28" width="438.09" height="461.47"/>
     </clipPath>
   </defs>
-  <g>
-    <path class="cls-8" d="M238.59,274.57l19.96-26.85,22.36,15.82,57.26-81.34.33-34.02-5.69-4.33,7.64-11.88.65-39.42-73.47-51.98-26.89,38.01L129.72.05l-58.67,82.93.35,31.97,95.88,67.95-20.33,28.24c-58.67-44.77-104.64-76.99-104.64-76.99L.02,187.39l.96,32.25s25.68,32.45,153.29,116.05c127.6,83.61,240.66,129.46,240.66,129.46l24.54-61.74,1.62-38.15c-31.66-13.97-104.87-42.47-182.5-90.7"/>
-    <g class="cls-9">
-      <g class="cls-2">
-        <g class="cls-6">
-          <path class="cls-7" d="M221.13,262.8l36.11-49.13,22.12,15.19,58.96-80.75-24.29-17.65,26.99-37.99-73.21-51.9-26.78,37.99L129.96.04l-59.23,83.3,111.48,78.26-34.81,49.82c-58.67-44.77-104.89-76.91-104.89-76.91L.91,187.14s30.68,40.44,158.28,124.04c127.6,83.61,235.28,121.33,235.28,121.33l26.53-67.11s-111.11-44.99-199.87-102.59"/>
+  <g class="cls-11">
+    <g class="cls-5">
+      <path class="cls-10" d="M238.56,274.53l19.96-26.85,22.36,15.82,57.26-81.34.33-34.02-5.69-4.33,7.64-11.88.65-39.42-73.47-51.98-26.89,38.01L129.69,0l-58.67,82.93.35,31.97,95.88,67.95-20.33,28.24c-58.67-44.77-104.64-76.99-104.64-76.99L0,187.34l.96,32.25s25.68,32.45,153.29,116.05c127.6,83.61,240.66,129.46,240.66,129.46l24.54-61.74,1.62-38.15c-31.66-13.97-104.87-42.47-182.5-90.7"/>
+      <g class="cls-9">
+        <g class="cls-7">
+          <g class="cls-2">
+            <g class="cls-6">
+              <path class="cls-8" d="M221.11,262.76l36.11-49.13,22.12,15.19,58.96-80.75-24.29-17.65,26.99-37.99-73.21-51.9-26.78,37.99L129.94,0l-59.23,83.3,111.48,78.26-34.81,49.82c-58.67-44.77-104.89-76.91-104.89-76.91L.89,187.1s30.68,40.44,158.28,124.04c127.6,83.61,235.28,121.33,235.28,121.33l26.53-67.11s-111.11-44.99-199.87-102.59"/>
+            </g>
+          </g>
         </g>
       </g>
     </g>
+    <rect class="cls-8" x="221.83" y="125.46" width="42.26" height="42.26"/>
+    <path d="M242.61,150.09h-1.93v6.33h-5.05v-22.94h6.98c2.73,0,4.85.74,6.36,2.23,1.51,1.49,2.26,3.51,2.26,6.06,0,1.64-.32,3.07-.97,4.29-.64,1.22-1.58,2.19-2.8,2.88l3.87,7.47h-5.57l-3.15-6.33ZM242.38,146.16c1.2,0,2.11-.39,2.74-1.16.62-.78.93-1.85.93-3.23s-.32-2.43-.95-3.21c-.63-.79-1.54-1.18-2.72-1.18h-1.7v8.78h1.7Z"/>
   </g>
-  <rect class="cls-7" x="221.85" y="125.5" width="42.26" height="42.26"/>
-  <text class="cls-4" transform="translate(233.92 156.46)"><tspan x="0" y="0">R</tspan></text>
 </svg>
