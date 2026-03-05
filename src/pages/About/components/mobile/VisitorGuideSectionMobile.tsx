@@ -57,6 +57,11 @@ const SchoolMap = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
 `;
 
 const PositionWrapper = styled.div<{

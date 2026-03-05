@@ -57,6 +57,12 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
   height: 70px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 `;
 
 const StaffList = styled.div`
