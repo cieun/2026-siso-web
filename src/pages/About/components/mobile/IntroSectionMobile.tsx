@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { AboutSection } from '../AboutSection';
 // import TextBox from '../../../../components/common/TextBox';
-import TextAnimation from '../../../Main/Animation/TextAnimationMobile';
+import TextAnimation from '../../Animation/TextAnimationMobile';
 import { introData } from '../../data/introData';
 
 import Poster1 from '../../assets/intro_poster_1.jpg';
