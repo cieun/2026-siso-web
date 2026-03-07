@@ -11,7 +11,7 @@ import Box5 from '../assets/poster_label_5.svg';
 import Guide from '../assets/guide.svg';
 
 // type Variants = {
-//   [key: string]: any;
+//   [key: string]: any;a
 // };
 
 const TextContainer = styled.div`

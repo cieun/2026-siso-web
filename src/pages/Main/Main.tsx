@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 import Model from './Model/Model';
 import { OBJECT_SETS } from './data/ObjectData';
 import * as THREE from 'three';
-import TextAnimation from '../About/Animation/TextAnimation';
+// import TextAnimation from '../About/Animation/TextAnimation';
 import { useThree } from '@react-three/fiber';
 
 const MainContainer = styled.div`
