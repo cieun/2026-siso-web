@@ -25,7 +25,7 @@ const BackgroundLayer = styled.div`
   width: 100%;
   height: 100vh;
   background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
+    `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
   z-index: 0;
   overflow: hidden;
 `;

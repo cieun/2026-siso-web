@@ -4,6 +4,8 @@ import TextBox from '../../../components/common/TextBox';
 import SectionTitle from './SectionTitle';
 import { goodsData } from '../data/goodsData';
 
+import goodsImg from '../assets/goods.gif';
+
 const GoodsContainer = styled(AboutSection)``;
 
 const LeftContent = styled.div`
@@ -55,7 +57,12 @@ const ItemPrice = styled.span`
 `;
 
 const ImagePlaceholder = styled.div`
-  background-color: #d9d9d9;
+  // background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
 `;
 
 const GoodsSection = () => {
@@ -85,7 +92,9 @@ const GoodsSection = () => {
         </GoodsList>
       </LeftContent>
 
-      <ImagePlaceholder></ImagePlaceholder>
+      <ImagePlaceholder>
+        <img src={goodsImg} style={{ height: '100%' }} />
+      </ImagePlaceholder>
     </GoodsContainer>
   );
 };

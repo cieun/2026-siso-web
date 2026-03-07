@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { AboutSection } from '../AboutSection';
-import TextBox from '../../../../components/common/TextBox';
+// import TextBox from '../../../../components/common/TextBox';
+import TextAnimation from '../../../Main/Animation/TextAnimationMobile';
 import { introData } from '../../data/introData';
 
 import Poster1 from '../../assets/intro_poster_1.jpg';
@@ -18,44 +19,42 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px 0 80px 0;
+  height: 35vh;
   font-weight: 800;
 
-  @media (min-width: 400px) and (max-width: 768px) {
-    && span.content-text {
-      font-size: 2.2rem;
-    }
+  // @media (min-width: 400px) and (max-width: 768px) {
+  //   && span.content-text {
+  //     font-size: 2.2rem;
+  //   }
   }
 `;
 
-const MOBILE_POSTER_WIDTH = 'calc(100vw - 48px)';
-
 const slide = keyframes`
   0%, 20% { transform: translateX(0); }
-  25%, 45% { transform: translateX(calc(-1 * ${MOBILE_POSTER_WIDTH})); }
-  50%, 70% { transform: translateX(calc(-2 * ${MOBILE_POSTER_WIDTH})); }
-  75%, 95% { transform: translateX(calc(-3 * ${MOBILE_POSTER_WIDTH})); }
-  100% { transform: translateX(calc(-4 * ${MOBILE_POSTER_WIDTH})); }
+  25%, 45% { transform: translateX(-100%); }
+  50%, 70% { transform: translateX(-200%); }
+  75%, 95% { transform: translateX(-300%); }
+  100% { transform: translateX(-400%); }
 `;
 
 const PosterGrid = styled.div`
   display: flex;
   overflow: hidden;
-  width: ${MOBILE_POSTER_WIDTH};
+  width: calc(100vw - 48px);
   aspect-ratio: 1 / 1.414;
   position: relative;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
 `;
 
 const SlideTrack = styled.div`
   display: flex;
-  gap: 0px;
-  width: max-content;
+  gap: 0;
+  width: calc(100vw - 48px);
   animation: ${slide} 15s ease-in-out infinite;
 `;
 
 const PosterImage = styled.img`
-  width: ${MOBILE_POSTER_WIDTH};
+  width: 100%;
   height: 100%;
   object-fit: cover;
   flex-shrink: 0;
@@ -87,9 +86,10 @@ const IntroSectionMobile = () => {
     <AboutSection>
       <ContentContainer>
         <TitleContainer>
-          <TextBox fontSize="1.8rem" textAlign="center" rotate={0} width="100%">
+          {/* <TextBox fontSize="1.8rem" textAlign="center" rotate={0} width="100%">
             {introData.title}
-          </TextBox>
+          </TextBox> */}
+          <TextAnimation />
         </TitleContainer>
         <PosterGrid>
           <SlideTrack>

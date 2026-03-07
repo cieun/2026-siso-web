@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import GroupNames from '../assets/poster_clubTexts.svg';
+// import GroupNames from '../assets/poster_clubTexts.svg';
 import Box1 from '../assets/poster_label_1.svg';
 import Box2 from '../assets/poster_label_2.svg';
 import Box3 from '../assets/poster_label_3.svg';
@@ -10,41 +10,51 @@ import Box5 from '../assets/poster_label_5.svg';
 
 import Guide from '../assets/guide.svg';
 
-type Variants = {
-  [key: string]: any;
-};
+// type Variants = {
+//   [key: string]: any;
+// };
 
 const TextContainer = styled.div`
-  width: 40vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 180px 36px 54px 36px;
+  width: 100%;
   z-index: 10;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  // position: absolute;
+  // left: 0;
+  // bottom: 36px;
+`;
+
+const FallingText = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MasterGroup = styled.div`
+  position: relative;
+  width: 620px;
+  height: 410px;
 `;
 
 const TextAnimation = () => {
   const isDebugMode = false;
 
-  const groupNamesVariants: Variants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut', delay: 6 },
-    },
-  };
+  // const groupNamesVariants: Variants = {
+  //   hidden: { opacity: 0, x: -50 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { duration: 0.8, ease: 'easeOut', delay: 6 },
+  //   },
+  // };
 
   const boxData = [
-    { src: Box1, x: 148, y: 271, scale: 0.84 },
-    { src: Box2, x: 120, y: 298, scale: 1.93 },
-    { src: Box3, x: 216, y: 326, scale: 4.1 },
-    { src: Box4, x: 125, y: 373, scale: 4.3 },
-    { src: Box5, x: 120, y: 431, scale: 2 },
+    { src: Box1, x: 138, y: 20, scale: 0.84 },
+    { src: Box2, x: 110, y: 47, scale: 1.93 },
+    { src: Box3, x: 206, y: 75, scale: 4.1 },
+    { src: Box4, x: 115, y: 122, scale: 4.3 },
+    { src: Box5, x: 110, y: 180, scale: 2 },
   ];
 
   interface BoxAnimation {
@@ -54,7 +64,7 @@ const TextAnimation = () => {
 
   const getBoxAnimation = (i: number): BoxAnimation => {
     const data = boxData[i];
-    const baseDelay = 3.5;
+    const baseDelay = 0;
     const delay = baseDelay + (4 - i) * 0.33;
 
     const baseInitial = {
@@ -219,7 +229,7 @@ const TextAnimation = () => {
   return (
     <>
       <TextContainer>
-        <motion.div
+        {/* <motion.div
           variants={groupNamesVariants}
           initial={isDebugMode ? 'visible' : 'hidden'}
           animate="visible"
@@ -230,43 +240,38 @@ const TextAnimation = () => {
             alt="Names"
             style={{ width: '100px', transform: 'scale(1)' }}
           />
-        </motion.div>
+        </motion.div> */}
 
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0',
-            height: '40vh',
-          }}
-        >
-          {boxData.map((data, i) => {
-            const anim = getBoxAnimation(i);
-            return (
-              <motion.div
-                key={i}
-                initial={isDebugMode ? anim.animate : anim.initial}
-                animate={anim.animate}
-                style={{
-                  position: 'absolute',
-                  left: data.x,
-                  top: data.y,
-                  translateX: '-50%',
-                  translateY: '-50%',
-                  originX: 0.5,
-                  originY: 0.5,
-                  zIndex: 5 - i,
-                }}
-              >
-                <img
-                  src={data.src}
-                  alt={`Label-${i}`}
-                  style={{ display: 'block', width: '100px' }}
-                />
-              </motion.div>
-            );
-          })}
-        </div>
+        <FallingText>
+          <MasterGroup>
+            {boxData.map((data, i) => {
+              const anim = getBoxAnimation(i);
+              return (
+                <motion.div
+                  key={i}
+                  initial={isDebugMode ? anim.animate : anim.initial}
+                  animate={anim.animate}
+                  style={{
+                    position: 'absolute',
+                    left: data.x,
+                    top: data.y,
+                    translateX: '-50%',
+                    translateY: '-50%',
+                    originX: 0.5,
+                    originY: 0.5,
+                    zIndex: 5 - i,
+                  }}
+                >
+                  <img
+                    src={data.src}
+                    alt={`Label-${i}`}
+                    style={{ display: 'block', width: '100px' }}
+                  />
+                </motion.div>
+              );
+            })}
+          </MasterGroup>
+        </FallingText>
       </TextContainer>
       <div style={{ position: 'fixed', bottom: '36px', left: '36px' }}>
         <img src={Guide} style={{ width: '600px', display: 'none' }} />

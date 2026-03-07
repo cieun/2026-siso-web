@@ -13,6 +13,14 @@ const PageWrapper = styled.div<{ $isWhiteBg: boolean }>`
   overflow-y: auto;
   overflow-x: hidden;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
+
   background-color: ${({ theme }) => theme.colors.background};
 
   &::after {

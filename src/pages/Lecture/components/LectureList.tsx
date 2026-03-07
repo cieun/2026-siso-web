@@ -6,6 +6,14 @@ import TextBox from '../../../components/common/TextBox';
 const ListWrapper = styled.div`
   height: 68vh;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
 `;
 
 const RowMain = styled.div`

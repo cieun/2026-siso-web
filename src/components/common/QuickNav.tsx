@@ -20,15 +20,15 @@ const QuickNavContainer = styled.div`
 const NavCircle = styled.a`
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.oceanWater};
+  // border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 
   img {
-    width: 60%;
+    width: 80%;
     height: auto;
     object-fit: contain;
   }

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-import GroupNames from '../assets/poster_clubTexts_right.svg';
+// import GroupNames from '../assets/poster_clubTexts_right.svg';
 import Box1 from '../assets/poster_label_1.svg';
 import Box2 from '../assets/poster_label_2.svg';
 import Box3 from '../assets/poster_label_3.svg';
@@ -10,40 +10,47 @@ import Box5 from '../assets/poster_label_5.svg';
 
 import Guide from '../assets/guide.svg';
 
-type Variants = {
-  [key: string]: any;
-};
+// type Variants = {
+//   [key: string]: any;
+// };
 
 const TextContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 60px 24px 24px 24px;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
   z-index: 10;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const MasterGroup = styled.div`
+  position: relative;
+  width: 350px;
+  height: 240px;
 `;
 
 const TextAnimationMobile = () => {
   const isDebugMode = false;
 
-  const groupNamesVariants: Variants = {
-    hidden: { opacity: 0, x: +50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8, ease: 'easeOut', delay: 6 },
-    },
-  };
+  // const groupNamesVariants: Variants = {
+  //   hidden: { opacity: 0, x: +50 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { duration: 0.8, ease: 'easeOut', delay: 6 },
+  //   },
+  // };
 
   const boxData = [
-    { src: Box1, x: 88, y: 62, scale: 0.8 },
-    { src: Box2, x: 71, y: 78, scale: 1.85 },
-    { src: Box3, x: 128, y: 94, scale: 4.0 },
-    { src: Box4, x: 76, y: 122, scale: 4.3 },
-    { src: Box5, x: 70, y: 155, scale: 2 },
+    { src: Box1, x: 75, y: 12, scale: 0.8 },
+    { src: Box2, x: 58, y: 28, scale: 1.85 },
+    { src: Box3, x: 115, y: 44, scale: 4.0 },
+    { src: Box4, x: 63, y: 72, scale: 4.3 },
+    { src: Box5, x: 57, y: 105, scale: 2 },
   ];
 
   interface BoxAnimation {
@@ -53,7 +60,7 @@ const TextAnimationMobile = () => {
 
   const getBoxAnimation = (i: number): BoxAnimation => {
     const data = boxData[i];
-    const baseDelay = 3.5;
+    const baseDelay = 0;
     const delay = baseDelay + (4 - i) * 0.33;
 
     const baseInitial = {
@@ -218,16 +225,7 @@ const TextAnimationMobile = () => {
   return (
     <>
       <TextContainer>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            gap: '0',
-            width: '100%',
-            height: '32vh',
-          }}
-        >
+        <MasterGroup>
           {boxData.map((data, i) => {
             const anim = getBoxAnimation(i);
             return (
@@ -254,8 +252,8 @@ const TextAnimationMobile = () => {
               </motion.div>
             );
           })}
-        </div>
-        <motion.div
+        </MasterGroup>
+        {/* <motion.div
           variants={groupNamesVariants}
           initial={isDebugMode ? 'visible' : 'hidden'}
           animate="visible"
@@ -266,7 +264,7 @@ const TextAnimationMobile = () => {
             alt="Names"
             style={{ width: '70px', transform: 'scale(1)' }}
           />
-        </motion.div>
+        </motion.div> */}
       </TextContainer>
       <div style={{ position: 'fixed', top: '120px', left: '24px' }}>
         <img src={Guide} style={{ width: '350px', display: 'none' }} />

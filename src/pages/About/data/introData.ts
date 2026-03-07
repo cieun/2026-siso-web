@@ -2,7 +2,7 @@ export const introData = {
   title: `2026 홍익대학교 시각디자인과 소모임 축제주간: SISO
 2026 HIVCD Club Festival Week: SISO`,
   info: [
-    { label: '전시 기간', value: '2026.03.09 - 2026.03.16' },
+    { label: '전시 기간', value: '2026.03.09 - 2026.03.13' },
     {
       label: '전시 장소',
       value: '홍익대학교 R동(홍문관) 1층 다목적실 ・ S동 3층 신축강당',

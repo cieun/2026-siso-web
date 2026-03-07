@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { AboutSection } from './AboutSection';
-import TextBox from '../../../components/common/TextBox';
+// import TextBox from '../../../components/common/TextBox';
+import TextAnimation from '../../Main/Animation/TextAnimation';
 import { introData } from '../data/introData';
 
 import Poster1 from '../assets/intro_poster_1.jpg';
@@ -14,6 +15,7 @@ const LeftColumn = styled.div`
   height: 100%;
   justify-content: flex-start;
   gap: 50px;
+  width: 100%;
 `;
 
 const RightColumn = styled.div`
@@ -26,6 +28,7 @@ const RightColumn = styled.div`
 `;
 
 const TitleContainer = styled.div`
+  width: 100%;
   height: calc(24vw * 1.4 - 25px); //포스터 이미지 너비 * 높이 비율 +- 조절
   display: flex;
   justify-content: center;
@@ -59,11 +62,11 @@ const InfoValue = styled.span`
 `;
 
 const slide = keyframes`
-  0%, 20% { transform: translateX(0); }
-  25%, 45% { transform: translateX(calc(-24vw - 20px)); }
-  50%, 70% { transform: translateX(calc((-24vw - 20px) * 2)); }
-  75%, 95% { transform: translateX(calc((-24vw - 20px) * 3)); }
-  100% { transform: translateX(calc((-24vw - 20px) * 4)); }
+0%, 20% { transform: translateX(0); }
+  25%, 45% { transform: translateX(calc(((-47vw + 20px) / 2) - 20px)); }
+  50%, 70% { transform: translateX(calc(((-47vw + 20px) / 2 - 20px) * 2)); }
+  75%, 95% { transform: translateX(calc(((-47vw + 20px) / 2 - 20px) * 3)); }
+  100% { transform: translateX(calc(((-47vw + 20px) / 2 - 20px) * 4)); }
 `;
 
 const PosterGrid = styled.div`
@@ -73,6 +76,7 @@ const PosterGrid = styled.div`
   width: 47vw;
   aspect-ratio: 1 / 0.7;
   position: relative;
+  contain: paint;
 `;
 
 const SlideTrack = styled.div`
@@ -83,8 +87,8 @@ const SlideTrack = styled.div`
 `;
 
 const PosterImage = styled.img`
-  width: 24vw;
-  height: auto;
+  width: calc((47vw - 20px) / 2);
+  height: 100%;
   object-fit: cover;
   flex-shrink: 0;
 `;
@@ -96,9 +100,10 @@ const IntroSection = () => {
     <AboutSection>
       <LeftColumn>
         <TitleContainer>
-          <TextBox fontSize="2.4rem" textAlign="center" rotate={0} width="100%">
+          {/* <TextBox fontSize="2.4rem" textAlign="center" rotate={0} width="100%">
             {introData.title}
-          </TextBox>
+          </TextBox> */}
+          <TextAnimation />
         </TitleContainer>
         <div>
           <InfoGrid>

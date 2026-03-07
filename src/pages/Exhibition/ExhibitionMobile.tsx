@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import TextBox from '../../components/common/TextBox';
+// import TextBox from '../../components/common/TextBox';
 import { exhibitionData } from './data/ExhibitionData';
 import Footer from '../../components/common/Footer';
 
@@ -9,13 +9,21 @@ const ExhibitionWrapper = styled.div`
   height: 100dvh;
   min-height: 100dvh;
   background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
+    `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
 
   position: fixed;
   top: 0;
   left: 0;
   overflow-x: hidden;
   padding: 0 24px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
 `;
 const ObjectSection = styled.div`
   width: 100%;
@@ -49,16 +57,16 @@ const ObjectSVG = styled.img<{ $mobileWidth: string }>`
   height: auto;
 `;
 
-const LabelAnchor = styled.div<{
-  $pos: { top: string; left: string; rotate: number };
-}>`
-  position: absolute;
-  top: ${({ $pos }) => $pos.top};
-  left: ${({ $pos }) => $pos.left};
-  transform: rotate(${({ $pos }) => $pos.rotate}deg);
-  white-space: nowrap;
-  z-index: 10;
-`;
+// const LabelAnchor = styled.div<{
+//   $pos: { top: string; left: string; rotate: number };
+// }>`
+//   position: absolute;
+//   top: ${({ $pos }) => $pos.top};
+//   left: ${({ $pos }) => $pos.left};
+//   transform: rotate(${({ $pos }) => $pos.rotate}deg);
+//   white-space: nowrap;
+//   z-index: 10;
+// `;
 
 const ExhibitionMobile = () => {
   const navigate = useNavigate();
@@ -83,7 +91,7 @@ const ExhibitionMobile = () => {
               $mobileWidth={obj.mobileWidth}
             />
 
-            <LabelAnchor $pos={obj.namePosMobile}>
+            {/* <LabelAnchor $pos={obj.namePosMobile}>
               <TextBox fontSize="3rem" paddingType="narrow">
                 {obj.name}
               </TextBox>
@@ -97,7 +105,7 @@ const ExhibitionMobile = () => {
               >
                 {`${obj.fieldKo}\n${obj.fieldEn}`}
               </TextBox>
-            </LabelAnchor>
+            </LabelAnchor> */}
           </ObjectContainer>
         ))}
       </ObjectSection>

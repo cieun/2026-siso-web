@@ -12,11 +12,9 @@ const MainContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
+    `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 `;
 
@@ -57,7 +55,7 @@ const Main = () => {
 
   return (
     <MainContainer onClick={handleCanvasClick}>
-      <TextAnimation />
+      {/* <TextAnimation /> */}
       <div
         style={{ width: '100vw', height: '100vh', background: 'transparent' }}
       >

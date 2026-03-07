@@ -15,9 +15,15 @@ CustomEase.create(
   'M0,0 C0.05,0 0.18,0.35 0.28,1 L0.28,1 C0.35,0.6 0.43,0.6 0.5,0.6 C0.57,0.6 0.65,1 0.65,1 L0.65,1 C0.7,0.72 0.76,0.72 0.8,0.72 C0.84,0.72 0.9,1 0.9,1 L0.9,1 C0.92,0.9 0.96,0.9 0.98,0.9 C1,0.9 1,1 1,1',
 );
 
+CustomEase.create(
+  'mobileBounces',
+  'M0,0 C0.05,0 0.18,0.35 0.28,1 L0.28,1 C0.35,0.72 0.43,0.72 0.5,0.72 C0.57,0.72 0.65,1 0.65,1 L0.65,1 C0.7,0.82 0.76,0.82 0.8,0.82 C0.84,0.82 0.9,1 0.9,1 L0.9,1 C0.92,0.92 0.96,0.92 0.98,0.92 C1,0.92 1,1 1,1',
+);
+
 interface ModelProps extends React.HTMLAttributes<HTMLDivElement> {
   url: string;
   position: [number, number, number];
+  afterPosition?: [number, number, number];
   rotation?: [number, number, number];
   scale?: number;
   isInteractive?: boolean;
@@ -27,6 +33,7 @@ interface ModelProps extends React.HTMLAttributes<HTMLDivElement> {
 const Model = ({
   url,
   position,
+  afterPosition,
   rotation = [0, 0, 0],
   scale = 1,
   isInteractive = false,
@@ -37,23 +44,8 @@ const Model = ({
   const clonedScene = useMemo(() => scene.clone(), [scene]);
   const [isAnimationFinished, setIsAnimationFinished] = useState(false);
 
-  useEffect(() => {
-    clonedScene.traverse((child) => {
-      if (child instanceof THREE.Mesh) {
-        child.renderOrder = 1;
-        if (child.material) {
-          Object.assign(child.material, {
-            side: THREE.DoubleSide,
-            depthTest: true,
-            depthWrite: true,
-            polygonOffset: true,
-            polygonOffsetFactor: -1.0,
-            polygonOffsetUnits: -4.0,
-          });
-        }
-      }
-    });
-  }, [clonedScene]);
+  const isMobile = window.innerWidth < 768;
+  const finalTargetScale = isMobile ? scale * 1.7 : scale;
 
   useEffect(() => {
     const target = groupRef.current;
@@ -61,99 +53,153 @@ const Model = ({
     const isDot = url.includes('dot');
     const isBar = url.includes('bar');
 
+    const dropHeight = isMobile ? 24 : 6;
+    const mobileMultiplier = 1.8;
+    const baseDuration = isBar ? 0.8 : 1.2;
+    const finalDuration = isMobile
+      ? baseDuration * mobileMultiplier
+      : baseDuration;
+    const currentEase = isMobile ? 'mobileBounces' : 'fourBounces';
+
     if (isGlobalFirstRender && visible) {
-      target.position.set(position[0], position[1] + 6, position[2]);
+      target.position.set(position[0], position[1] + dropHeight, position[2]);
       target.scale.set(0, 0, 0);
       target.rotation.set(rotation[0], rotation[1], rotation[2]);
+
+      const tl = gsap.timeline({
+        onComplete: () => {
+          setIsAnimationFinished(true);
+          isGlobalFirstRender = false;
+        },
+      });
+
+      if (isDot) {
+        const dotDuration = isMobile ? 2.8 : 2.4;
+
+        tl.to(
+          target.scale,
+          {
+            x: scale,
+            y: scale,
+            z: scale,
+            duration: 1.0,
+            ease: 'elastic.out(1, 0.75)',
+          },
+          0,
+        )
+          .to(
+            target.position,
+            {
+              y: position[1],
+              duration: dotDuration,
+              ease: currentEase,
+            },
+            0,
+          )
+          .to(
+            target.position,
+            {
+              x: position[0],
+              z: position[2],
+              duration: dotDuration,
+              ease: 'none',
+            },
+            0,
+          )
+          .to(
+            target.rotation,
+            {
+              x: rotation[0],
+              y: rotation[1],
+              duration: dotDuration + 0.4,
+              ease: 'power1.in',
+            },
+            0,
+          );
+      } else {
+        tl.to(
+          target.position,
+          {
+            y: position[1],
+            duration: finalDuration,
+            ease: 'elastic.out(0.5, 0.8)',
+            delay: isMobile ? 3.0 : 2.8,
+            onStart: () => {
+              gsap.to(target.scale, {
+                x: scale,
+                y: scale,
+                z: scale,
+                duration: 0.4,
+                ease: 'power2.out',
+              });
+            },
+          },
+          0,
+        );
+      }
+
+      if (isMobile) {
+        const finalPos = afterPosition || position;
+
+        tl.to(
+          target.scale,
+          {
+            x: finalTargetScale,
+            y: finalTargetScale,
+            z: finalTargetScale,
+            duration: 1.2,
+            ease: 'back.out(1.7)',
+          },
+          4.8,
+        );
+        tl.to(
+          target.position,
+          {
+            x: finalPos[0],
+            y: finalPos[1],
+            z: finalPos[2],
+            duration: 1.2,
+            ease: 'power2.inOut',
+          },
+          4.45,
+        );
+      }
+    } else if (!isGlobalFirstRender) {
+      setIsAnimationFinished(true);
     } else {
       target.position.set(position[0], position[1], position[2]);
       target.scale.set(0, 0, 0);
       target.rotation.set(rotation[0], rotation[1], rotation[2]);
     }
-
-    if (isGlobalFirstRender && visible) {
-      if (isDot) {
-        gsap.to(target.scale, {
-          x: scale,
-          y: scale,
-          z: scale,
-          duration: 1.0,
-          ease: 'elastic.out(1, 0.75)',
-          delay: isDot ? 0 : 0.2,
-        });
-
-        target.rotation.set(
-          rotation[0] - Math.PI * 0.5,
-          rotation[1] - Math.PI * 4,
-          rotation[2],
-        );
-        gsap.to(target.position, {
-          y: position[1],
-          duration: 2.4,
-          ease: 'fourBounces',
-          onComplete: () => {
-            setIsAnimationFinished(true);
-            isGlobalFirstRender = false;
-          },
-        });
-        gsap.to(target.position, {
-          x: position[0],
-          z: position[2],
-          duration: 2.4,
-          ease: 'none',
-        });
-        gsap.to(target.rotation, {
-          x: rotation[0],
-          y: rotation[1],
-          duration: 2.7,
-          ease: 'power0.in',
-        });
-      } else {
-        target.scale.set(0, 0, 0);
-
-        gsap.to(target.position, {
-          y: position[1],
-          duration: isBar ? 0.8 : 1.2,
-          ease: 'elastic.out(0.5, 0.8)',
-          delay: 2.8,
-          onStart: () => {
-            gsap.to(target.scale, {
-              x: scale,
-              y: scale,
-              z: scale,
-              duration: 0.4,
-              ease: 'power2.out',
-            });
-          },
-          onComplete: () => {
-            setIsAnimationFinished(true);
-            isGlobalFirstRender = false;
-          },
-        });
-      }
-    } else if (!isGlobalFirstRender) {
-      setIsAnimationFinished(true);
-    }
-
     return () => {
       gsap.killTweensOf(target.position);
       gsap.killTweensOf(target.scale);
     };
-  }, [url, visible, rotation]);
+  }, [
+    visible,
+    afterPosition,
+    position,
+    scale,
+    finalTargetScale,
+    isMobile,
+    url,
+  ]);
 
   useEffect(() => {
     const target = groupRef.current;
     if (!target || isGlobalFirstRender) return;
 
     if (visible) {
-      target.rotation.set(rotation[0], rotation[1], rotation[2]);
+      const exitDuration = 0.3;
+      const staggeredDelay = url.includes('dot') ? 0 : 0.1;
+
       gsap.to(target.scale, {
-        x: scale,
-        y: scale,
-        z: scale,
+        x: finalTargetScale,
+        y: finalTargetScale,
+        z: finalTargetScale,
         duration: 0.8,
         ease: 'elastic.out(1, 0.75)',
-        delay: url.includes('dot') ? 0 : 0.1,
+        delay: exitDuration + staggeredDelay,
       });
     } else {
       gsap.to(target.scale, {
@@ -164,12 +210,13 @@ const Model = ({
         ease: 'back.in(1.7)',
       });
     }
-  }, [visible, scale, url, rotation]);
+  }, [visible, finalTargetScale, url]);
 
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
-      if (e.gamma !== null) {
-        tiltX = THREE.MathUtils.clamp(e.gamma / 30, -1, 1);
+      if (e.beta !== null) {
+        const horizontalTilt = (e.beta - 60) / 30;
+        tiltX = THREE.MathUtils.clamp(horizontalTilt, -1, 1);
       }
     };
 
@@ -185,7 +232,7 @@ const Model = ({
       return;
 
     const inputX = Math.abs(tiltX) > 0.01 ? tiltX : state.mouse.x;
-    const minDeg = -5;
+    const minDeg = 0;
     const maxDeg = 15;
     const mouseRad = THREE.MathUtils.degToRad(
       minDeg + (inputX + 1) * ((maxDeg - minDeg) / 2),

@@ -18,6 +18,14 @@ const PageWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  -ms-overflow-style: none;
 `;
 
 const LectureContainer = styled.div`

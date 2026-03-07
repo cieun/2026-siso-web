@@ -11,7 +11,7 @@ const Overlay = styled.div`
   height: 100vh;
   height: 100dvh;
   background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
+    `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
   z-index: 2000;
   display: flex;
   flex-direction: column;
@@ -103,11 +103,7 @@ const MobileMenu = ({ onClose }: { onClose: () => void }) => {
               onMouseLeave={() => setHoveredMenu(null)}
             >
               {isActive || isHovered ? (
-                <TextBox
-                  fontSize="4rem"
-                  paddingType="narrow"
-                  rotate={isActive ? -5 : 0}
-                >
+                <TextBox fontSize="4rem" paddingType="narrow" rotate={-5}>
                   {item.name}
                 </TextBox>
               ) : (
