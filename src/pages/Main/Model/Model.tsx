@@ -4,7 +4,6 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
-import { PI } from 'three/tsl';
 
 let isGlobalFirstRender = true;
 let tiltX = 0;
