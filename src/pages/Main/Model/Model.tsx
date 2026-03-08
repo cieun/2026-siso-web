@@ -4,9 +4,11 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
+import { PI } from 'three/tsl';
 
 let isGlobalFirstRender = true;
 let tiltX = 0;
+let initialAlpha: number | null = null;
 
 gsap.registerPlugin(CustomEase);
 
@@ -45,7 +47,7 @@ const Model = ({
   const [isAnimationFinished, setIsAnimationFinished] = useState(false);
 
   const isMobile = window.innerWidth < 768;
-  const finalTargetScale = isMobile ? scale * 1.7 : scale;
+  const finalTargetScale = isMobile ? scale * 1.5 : scale;
 
   useEffect(() => {
     const target = groupRef.current;
@@ -75,6 +77,11 @@ const Model = ({
 
       if (isDot) {
         const dotDuration = isMobile ? 2.8 : 2.4;
+        target.rotation.set(
+          rotation[0] + Math.PI * 0.5,
+          rotation[1] + Math.PI * 3,
+          rotation[2],
+        );
 
         tl.to(
           target.scale,
@@ -214,15 +221,23 @@ const Model = ({
 
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
-      if (e.beta !== null) {
-        const horizontalTilt = (e.beta - 60) / 30;
-        tiltX = THREE.MathUtils.clamp(horizontalTilt, -1, 1);
+      if (e.alpha !== null) {
+        if (initialAlpha === null) {
+          initialAlpha = e.alpha;
+        }
+        let deltaAlpha = e.alpha - initialAlpha;
+        if (deltaAlpha > 180) deltaAlpha -= 360;
+        if (deltaAlpha < -180) deltaAlpha += 360;
+
+        tiltX = THREE.MathUtils.clamp(deltaAlpha / 30, -1, 1);
       }
     };
 
     window.addEventListener('deviceorientation', handleOrientation);
-    return () =>
+    return () => {
       window.removeEventListener('deviceorientation', handleOrientation);
+      initialAlpha = null;
+    };
   }, []);
 
   useFrame((state) => {
@@ -232,17 +247,18 @@ const Model = ({
       return;
 
     const inputX = Math.abs(tiltX) > 0.01 ? tiltX : state.mouse.x;
+
     const minDeg = 0;
     const maxDeg = 15;
-    const mouseRad = THREE.MathUtils.degToRad(
+    const targetRad = THREE.MathUtils.degToRad(
       minDeg + (inputX + 1) * ((maxDeg - minDeg) / 2),
     );
 
-    const targetRad = rotation[2] + mouseRad;
+    const baseRotZ = rotation[2];
 
     groupRef.current.rotation.z = THREE.MathUtils.lerp(
       groupRef.current.rotation.z,
-      targetRad,
+      baseRotZ + targetRad,
       0.1,
     );
   });

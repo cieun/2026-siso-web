@@ -2,22 +2,22 @@ export const OBJECT_SETS = [
   [
     {
       url: '../assets/objects/dot1.glb',
-      position: [-1, -6.6, 0.2],
-      afterPosition: [-3.5, -8.5, 0.5],
+      position: [-1, -9.6, 0.2],
+      afterPosition: [-4.5, -8.2, 0.5],
       rotation: [183, 190, 180],
       scale: 1.4,
     },
     {
       url: '../assets/objects/bar1.glb',
-      position: [0, -5.5, 0],
-      afterPosition: [0, -7.0, 0],
+      position: [0, -8.5, 0],
+      afterPosition: [-1, -6.7, 0],
       rotation: [-18, 1, -10],
       scale: 1.5,
     },
     {
       url: '../assets/objects/arc1.glb',
-      position: [2, -3.0, 0],
-      afterPosition: [6, -4, 0],
+      position: [2, -6.0, 0],
+      afterPosition: [5, -3.7, 0],
       rotation: [0, -45, 10],
       scale: 1.4,
     },
@@ -25,7 +25,7 @@ export const OBJECT_SETS = [
   [
     {
       url: '../assets/objects/dot2.glb',
-      position: [2, -8.6, 0],
+      position: [2, -8.3, 0],
       rotation: [-5, 0, -5],
       scale: 1.3,
     },
@@ -37,7 +37,7 @@ export const OBJECT_SETS = [
     },
     {
       url: '../assets/objects/arc2.glb',
-      position: [4.5, -3.2, -9.5],
+      position: [4.8, -3.2, -9.5],
       rotation: [-40, -40, -30],
       scale: 1.2,
     },
@@ -45,19 +45,19 @@ export const OBJECT_SETS = [
   [
     {
       url: '../assets/objects/dot3.glb',
-      position: [0, -9.0, 0],
+      position: [0, -8.0, 0],
       rotation: [0, 120, 0],
       scale: 1.5,
     },
     {
       url: '../assets/objects/bar3.glb',
-      position: [0.5, -7.8, -0.5],
+      position: [0.5, -6.8, -0.5],
       rotation: [0, -50, -5],
       scale: 1.7,
     },
     {
       url: '../assets/objects/arc3.glb',
-      position: [0, -4.8, 0],
+      position: [0, -4.1, 0],
       rotation: [0, -50, -30],
       scale: 1.5,
     },
@@ -65,13 +65,13 @@ export const OBJECT_SETS = [
   [
     {
       url: '../assets/objects/dot4.glb',
-      position: [-3.5, -8.8, 5],
+      position: [-3.5, -8.6, 5],
       rotation: [-10, -15, 0],
       scale: 1.3,
     },
     {
       url: '../assets/objects/bar4.glb',
-      position: [0, -7.0, 0],
+      position: [0, -6.8, 0],
       rotation: [0, 10, -10],
       scale: 1.2,
     },
