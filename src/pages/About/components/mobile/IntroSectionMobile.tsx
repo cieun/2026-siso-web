@@ -19,7 +19,7 @@ const TitleContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35vh;
+  height: 45vh;
   font-weight: 800;
 
   // @media (min-width: 400px) and (max-width: 768px) {
