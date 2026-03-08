@@ -7,7 +7,6 @@ import { CustomEase } from 'gsap/CustomEase';
 
 let isGlobalFirstRender = true;
 let tiltX = 0;
-let initialAlpha: number | null = null;
 
 gsap.registerPlugin(CustomEase);
 
@@ -220,22 +219,14 @@ const Model = ({
 
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
-      if (e.alpha !== null) {
-        if (initialAlpha === null) {
-          initialAlpha = e.alpha;
-        }
-        let deltaAlpha = e.alpha - initialAlpha;
-        if (deltaAlpha > 180) deltaAlpha -= 360;
-        if (deltaAlpha < -180) deltaAlpha += 360;
-
-        tiltX = THREE.MathUtils.clamp(deltaAlpha / 30, -1, 1);
+      if (e.gamma !== null) {
+        tiltX = THREE.MathUtils.clamp(e.gamma / 30, -1, 1);
       }
     };
 
     window.addEventListener('deviceorientation', handleOrientation);
     return () => {
       window.removeEventListener('deviceorientation', handleOrientation);
-      initialAlpha = null;
     };
   }, []);
 
