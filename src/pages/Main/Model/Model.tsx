@@ -219,24 +219,22 @@ const Model = ({
 
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
-      if (e.gamma !== null) {
-        let horizontalValue = 0;
+      if (e.beta !== null && e.gamma !== null) {
+        const angle = Math.atan2(e.gamma, e.beta);
 
-        // 1. 현재 기기가 어느 방향으로 돌아가 있는지 확인 (90도 혹은 -90도)
         const orientation = window.orientation || 0;
 
-        if (orientation === 90) {
-          // 오른쪽으로 돌린 가로: gamma가 90도 근처이므로 90을 빼서 0점을 잡습니다.
-          horizontalValue = (e.gamma - 90) / 30;
-        } else if (orientation === -90) {
-          // 왼쪽으로 돌린 가로: gamma가 -90도 근처이므로 90을 더해서 0점을 잡습니다.
-          horizontalValue = (e.gamma + 90) / 30;
-        } else {
-          // 세로 모드일 때 (기존 로직 유지)
-          horizontalValue = e.gamma / 30;
-        }
+        let targetTilt = 0;
+        const rad90 = Math.PI / 2;
 
-        tiltX = THREE.MathUtils.clamp(horizontalValue, -1, 1);
+        if (orientation === 90) {
+          targetTilt = angle - rad90;
+        } else if (orientation === -90) {
+          targetTilt = angle + rad90;
+        } else {
+          targetTilt = angle;
+        }
+        tiltX = THREE.MathUtils.clamp(targetTilt / (Math.PI / 6), -1, 1);
       }
     };
 
