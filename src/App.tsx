@@ -12,7 +12,7 @@ import Exhibition from './pages/Exhibition';
 import Projects from './pages/Exhibition/projects';
 import Archive from './pages/Archive';
 
-const IS_OPEN = false;
+const IS_OPEN = true;
 
 const ComingSoon = () => (
   <div

@@ -173,7 +173,7 @@ const Model = ({
     } else if (visible) {
       setIsAnimationFinished(true);
 
-      const finalPos = isMobile ? afterPosition || position : position;
+      const finalPos = afterPosition || position;
 
       gsap.killTweensOf(target.position);
       gsap.killTweensOf(target.scale);

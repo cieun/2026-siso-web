@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { useRef, useState, useEffect } from 'react';
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
@@ -10,6 +10,9 @@ import { OBJECT_SETS } from './data/ObjectDataMobile';
 
 import Model from './Model/Model';
 import { isGlobalFirstRender } from './Model/Model';
+
+import { IoMdPhoneLandscape } from 'react-icons/io';
+import { TbHandClick } from 'react-icons/tb';
 
 const MainContainer = styled.div`
   width: 100%;
@@ -25,6 +28,63 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+`;
+
+const fadeInOut = keyframes`
+  0% { opacity: 0;}      
+  20% { opacity: 0.5;}    
+  80% { opacity: 0.5;}   
+  100% { opacity: 0;}     
+`;
+
+const mouseClick = keyframes`
+  0% { transform: translate(-40%, -40%); opacity: 1; }
+  40% { transform: translate(-50%, -50%); opacity: 1;}
+  50% { transform: translate(-45%, -45%); opacity: 1;}
+  60% { transform: translate(-50%, -50%); opacity: 1;}
+  100% { transform: translate(-45%, -45%); opacity: 0;}
+`;
+
+const deviceShake = keyframes`
+  0% { transform: translate(-50%, -50%) rotate(0deg); opacity: 0;}
+  25% { transform: translate(-50%, -50%) rotate(20deg); opacity: 1;}
+  50% { transform: translate(-50%, -50%) rotate(-20deg); opacity: 1;}
+  75% { transform: translate(-50%, -50%) rotate(20deg); opacity: 1;}
+  100% { transform: translate(-50%, -50%) rotate(0deg); opacity: 1;}
+`;
+
+const InteractionGuide = styled.div`
+  width: 30vw;
+  height: 30vw;
+  background: rgba(139, 139, 139, 0.5);
+  border-radius: 20%;
+  opacity: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+
+  animation: ${fadeInOut} 4.4s ease-in-out forwards;
+
+  svg {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #000;
+    transform: translate(-50%, -50%);
+  }
+  svg:first-child {
+    animation: ${mouseClick} 1.7s ease-in-out forwards;
+  }
+  svg:last-child {
+    opacity: 0;
+    animation: ${deviceShake} 1.7s 1.7s ease-in-out forwards;
+  }
 `;
 
 const AdaptiveZoom = () => {
@@ -89,6 +149,25 @@ const MainMobile = () => {
   const [index, setIndex] = useState(0);
   const [isRotated, setIsRotated] = useState(!isGlobalFirstRender);
 
+  const [showGuide, setShowGuide] = useState(false);
+
+  useEffect(() => {
+    if (isGlobalFirstRender) {
+      const showTimer = setTimeout(() => {
+        setShowGuide(true);
+      }, 5000);
+
+      const hideTimer = setTimeout(() => {
+        setShowGuide(false);
+      }, 9400);
+
+      return () => {
+        clearTimeout(showTimer);
+        clearTimeout(hideTimer);
+      };
+    }
+  }, []);
+
   useEffect(() => {
     if (isGlobalFirstRender) {
       const timer = setTimeout(() => {
@@ -111,8 +190,10 @@ const MainMobile = () => {
           }
         })
         .catch(console.error);
+      setShowGuide(false);
     } else {
       setIndex((prev) => (prev + 1) % OBJECT_SETS.length);
+      setShowGuide(false);
     }
   };
 
@@ -159,6 +240,12 @@ const MainMobile = () => {
           </Suspense>
         </Canvas>
       </div>
+      {showGuide && (
+        <InteractionGuide>
+          <TbHandClick />
+          <IoMdPhoneLandscape />
+        </InteractionGuide>
+      )}
     </MainContainer>
   );
 };
