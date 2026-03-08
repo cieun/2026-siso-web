@@ -220,7 +220,23 @@ const Model = ({
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
       if (e.gamma !== null) {
-        tiltX = THREE.MathUtils.clamp(e.gamma / 30, -1, 1);
+        let horizontalValue = 0;
+
+        // 1. 현재 기기가 어느 방향으로 돌아가 있는지 확인 (90도 혹은 -90도)
+        const orientation = window.orientation || 0;
+
+        if (orientation === 90) {
+          // 오른쪽으로 돌린 가로: gamma가 90도 근처이므로 90을 빼서 0점을 잡습니다.
+          horizontalValue = (e.gamma - 90) / 30;
+        } else if (orientation === -90) {
+          // 왼쪽으로 돌린 가로: gamma가 -90도 근처이므로 90을 더해서 0점을 잡습니다.
+          horizontalValue = (e.gamma + 90) / 30;
+        } else {
+          // 세로 모드일 때 (기존 로직 유지)
+          horizontalValue = e.gamma / 30;
+        }
+
+        tiltX = THREE.MathUtils.clamp(horizontalValue, -1, 1);
       }
     };
 
@@ -239,7 +255,7 @@ const Model = ({
     const inputX = Math.abs(tiltX) > 0.01 ? tiltX : state.mouse.x;
 
     const minDeg = 0;
-    const maxDeg = 15;
+    const maxDeg = 30;
     const targetRad = THREE.MathUtils.degToRad(
       minDeg + (inputX + 1) * ((maxDeg - minDeg) / 2),
     );
