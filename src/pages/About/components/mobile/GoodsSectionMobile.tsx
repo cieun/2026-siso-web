@@ -4,6 +4,8 @@ import TextBox from '../../../../components/common/TextBox';
 import SectionTitle from '../SectionTitle';
 import { goodsData } from '../../data/goodsData';
 
+import goodsImg from '../../assets/goods.gif';
+
 const GoodsContainer = styled(AboutSection)``;
 
 const GoodsList = styled.div`
@@ -50,7 +52,6 @@ const ItemPrice = styled.span`
 `;
 
 const ImagePlaceholder = styled.div`
-  background-color: #d9d9d9;
   width: 100%;
   aspect-ratio: 1/1.2;
 `;
@@ -76,7 +77,10 @@ const GoodsSectionMobile = () => {
         ))}
       </GoodsList>
 
-      <ImagePlaceholder></ImagePlaceholder>
+      <ImagePlaceholder>
+        {' '}
+        <img src={goodsImg} style={{ height: '100%' }} />
+      </ImagePlaceholder>
     </GoodsContainer>
   );
 };

@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 
-let isGlobalFirstRender = true;
+export let isGlobalFirstRender = true;
 let tiltX = 0;
 
 gsap.registerPlugin(CustomEase);
@@ -155,7 +155,7 @@ const Model = ({
             duration: 1.2,
             ease: 'back.out(1.7)',
           },
-          4.8,
+          4.2,
         );
         tl.to(
           target.position,
@@ -165,12 +165,23 @@ const Model = ({
             z: finalPos[2],
             duration: 1.2,
             ease: 'power2.inOut',
+            overwrite: 'auto',
           },
-          4.45,
+          3.85,
         );
       }
-    } else if (!isGlobalFirstRender) {
+    } else if (visible) {
       setIsAnimationFinished(true);
+
+      const finalPos = isMobile ? afterPosition || position : position;
+
+      gsap.killTweensOf(target.position);
+      gsap.killTweensOf(target.scale);
+      gsap.killTweensOf(target.rotation);
+
+      target.position.set(finalPos[0], finalPos[1], finalPos[2]);
+      target.scale.set(finalTargetScale, finalTargetScale, finalTargetScale);
+      target.rotation.set(rotation[0], rotation[1], rotation[2]);
     } else {
       target.position.set(position[0], position[1], position[2]);
       target.scale.set(0, 0, 0);
@@ -220,28 +231,24 @@ const Model = ({
   useEffect(() => {
     const handleOrientation = (e: DeviceOrientationEvent) => {
       if (e.beta !== null && e.gamma !== null) {
-        const angle = Math.atan2(e.gamma, e.beta);
-
-        const orientation = window.orientation || 0;
-
+        const radian = Math.atan2(e.gamma, e.beta);
+        const degree = radian * (180 / Math.PI);
         let targetTilt = 0;
-        const rad90 = Math.PI / 2;
 
-        if (orientation === 90) {
-          targetTilt = angle - rad90;
-        } else if (orientation === -90) {
-          targetTilt = angle + rad90;
+        if (degree > 45 && degree < 135) {
+          targetTilt = (degree - 90) / 30;
+        } else if (degree < -45 && degree > -135) {
+          targetTilt = (degree + 90) / 30;
         } else {
-          targetTilt = angle;
+          targetTilt = degree / 30;
         }
-        tiltX = THREE.MathUtils.clamp(targetTilt / (Math.PI / 6), -1, 1);
+        tiltX = THREE.MathUtils.clamp(targetTilt, -1, 1);
       }
     };
 
     window.addEventListener('deviceorientation', handleOrientation);
-    return () => {
+    return () =>
       window.removeEventListener('deviceorientation', handleOrientation);
-    };
   }, []);
 
   useFrame((state) => {
@@ -253,7 +260,8 @@ const Model = ({
     const inputX = Math.abs(tiltX) > 0.01 ? tiltX : state.mouse.x;
 
     const minDeg = 0;
-    const maxDeg = 30;
+    const maxDeg = isMobile ? 20 : 10;
+
     const targetRad = THREE.MathUtils.degToRad(
       minDeg + (inputX + 1) * ((maxDeg - minDeg) / 2),
     );
@@ -268,7 +276,16 @@ const Model = ({
   });
 
   return (
-    <group ref={groupRef}>
+    <group
+      ref={groupRef}
+      scale={[0, 0, 0]}
+      position={[
+        position[0],
+        position[1] + (window.innerWidth < 768 ? 24 : 6),
+        position[2],
+      ]}
+      rotation={rotation}
+    >
       <Center>
         <primitive object={clonedScene} />
       </Center>

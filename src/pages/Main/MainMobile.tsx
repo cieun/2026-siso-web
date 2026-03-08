@@ -1,13 +1,15 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { useRef, useState, useEffect } from 'react';
 import { Suspense } from 'react';
-import Model from './Model/Model';
-import { OBJECT_SETS } from './data/ObjectDataMobile';
-import * as THREE from 'three';
-// import TextAnimation from './Animation/TextAnimationMobile';
+import { Canvas } from '@react-three/fiber';
 import { useThree } from '@react-three/fiber';
+import * as THREE from 'three';
 import gsap from 'gsap';
+
+import { OBJECT_SETS } from './data/ObjectDataMobile';
+
+import Model from './Model/Model';
+import { isGlobalFirstRender } from './Model/Model';
 
 const MainContainer = styled.div`
   width: 100%;
@@ -27,12 +29,10 @@ const MainContainer = styled.div`
 
 const AdaptiveZoom = () => {
   const { camera, size } = useThree();
-
   useEffect(() => {
     if (camera instanceof THREE.OrthographicCamera) {
       const width = size.width;
       let newZoom = 160;
-
       if (width < 440) {
         newZoom = 44;
       } else if (width < 768) {
@@ -44,7 +44,6 @@ const AdaptiveZoom = () => {
       } else {
         newZoom = 160;
       }
-
       camera.zoom = newZoom;
       camera.updateProjectionMatrix();
     }
@@ -56,21 +55,31 @@ const AdaptiveZoom = () => {
 const CameraRig = ({ isRotated }: { isRotated: boolean }) => {
   const { camera } = useThree();
 
+  const isFirstTimeEver = useRef<boolean>(isGlobalFirstRender);
+
   useEffect(() => {
     camera.lookAt(0, -5.5, 0);
   }, [camera]);
 
   useEffect(() => {
-    const targetRotation = isRotated ? Math.PI / 2 : Math.PI;
+    if (!isRotated) return;
 
-    gsap.to(camera.rotation, {
-      z: targetRotation,
-      duration: 1.2,
-      ease: 'power2.inOut',
-      onUpdate: () => {
-        camera.updateProjectionMatrix();
-      },
-    });
+    const targetRotation = Math.PI / 2;
+
+    if (isFirstTimeEver.current) {
+      gsap.to(camera.rotation, {
+        z: Math.PI / 2,
+        duration: 1.2,
+        ease: 'power2.inOut',
+        onUpdate: () => camera.updateProjectionMatrix(),
+        onComplete: () => {
+          isFirstTimeEver.current = false;
+        },
+      });
+    } else {
+      camera.rotation.z = targetRotation;
+      camera.updateProjectionMatrix();
+    }
   }, [isRotated, camera]);
 
   return null;
@@ -78,13 +87,15 @@ const CameraRig = ({ isRotated }: { isRotated: boolean }) => {
 
 const MainMobile = () => {
   const [index, setIndex] = useState(0);
-  const [isRotated, setIsRotated] = useState(false);
+  const [isRotated, setIsRotated] = useState(!isGlobalFirstRender);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsRotated(true);
-    }, 4200);
-    return () => clearTimeout(timer);
+    if (isGlobalFirstRender) {
+      const timer = setTimeout(() => {
+        setIsRotated(true);
+      }, 4200);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleCanvasClick = () => {
@@ -107,7 +118,6 @@ const MainMobile = () => {
 
   return (
     <MainContainer onClick={handleCanvasClick}>
-      {/* <TextAnimation /> */}
       <div
         style={{ width: '100vw', height: '100vh', background: 'transparent' }}
       >
