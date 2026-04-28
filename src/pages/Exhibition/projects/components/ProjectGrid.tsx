@@ -179,8 +179,8 @@ const ProjectGrid = ({
             img.toLowerCase().includes('thumbnail'),
           );
 
-          //   const finalDisplayImage = thumbnailImage || imageList[0] || '';
-          const finalDisplayImage = thumbnailImage || '';
+          const finalDisplayImage = thumbnailImage || imageList[0] || '';
+          // const finalDisplayImage = thumbnailImage || '';
 
           const formatAuthor = (authorStr: string) => {
             if (!authorStr) return '';

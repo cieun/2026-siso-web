@@ -6,7 +6,7 @@ export const PROJECTS_YADZ = [
     desc: '전쟁으로 무너진 세계 속 남겨진 인간 아이 이영과 개조된 전투형 인공지능 안드로이드 희상의 일상기록물',
     imgName:
       'yadz_thumbnail_kanghaelynn.png, yadz_kanghaelynn_1.jpg, yadz_kanghaelynn_2.jpg',
-    instaId: '@haeee__04',
+    instaId: 'haeee__04',
   },
   {
     club: 'yadz',
@@ -15,7 +15,7 @@ export const PROJECTS_YADZ = [
     desc: '보편적인 여행의 경험이 가장 개인적으로 변하는 어긋남의 순간들을 담은 zine',
     imgName:
       'yadz_thumbnail_irnkwn.webp, yadz_irnkwn_1.jpg, yadz_irnkwn_2.jpg, yadz_irnkwn_3.jpg, yadz_irnkwn_4.jpg, yadz_irnkwn_5.jpg',
-    instaId: '@irnkwn',
+    instaId: 'irnkwn',
   },
   {
     club: 'yadz',
@@ -42,7 +42,7 @@ export const PROJECTS_YADZ = [
     desc: '우리는 서로를 선택했다. 아마도... \n\n고양이를 키운다고 생각했지만 아니었다. 우리는 서로를 책임지고 있다. 오직 집사만 따르는 고양이 지지와, 마찬가지로 고양이만 있으면 되는 나. 우리가 매일 서로를 선택하며 살아가는 이야기.',
     imgName:
       'yadz_thumbnail_kimseonghyeon.jpg, yadz_kimseonghyeon_1.jpg\nyadz_kimseonghyeon_2.jpg\nyadz_kimseonghyeon_3.jpg',
-    instaId: '@kko_di',
+    instaId: 'kko_di',
   },
   {
     club: 'yadz',
@@ -51,7 +51,7 @@ export const PROJECTS_YADZ = [
     desc: '매일 밤, 딸의 방문 너머에서는 기이한 일이 일어나기 시작한다. 인영은 그 문을 열 자신이 없다.',
     imgName:
       'yadz_thumbnail_kimjeonghye.jpg\nyadz_kimjeonghye_1.jpg\nyadz_kimjeonghye_2.jpg\nyadz_kimjeonghye_3.jpg\nyadz_kimjeonghye_4.jpg\nyadz_kimjeonghye_5.jpg\nyadz_kimjeonghye_6.jpg',
-    instaId: '@jhyeye_',
+    instaId: 'jhyeye_',
   },
   {
     club: 'yadz',
@@ -69,7 +69,7 @@ export const PROJECTS_YADZ = [
     desc: '뿌리는 엉켜있어도 쉼 없이 나아갑니다. 지금의 흔들림도 어딘가 깊게 뿌리 내리기 위한 여정이기를.',
     imgName:
       'yadz_thumbnail_kimhyein.jpg, yadz_kimhyein_1.jpg, yadz_kimhyein_2.jpg, yadz_kimhyein_3.jpg',
-    instaId: '@inny_1023',
+    instaId: 'inny_1023',
   },
   {
     club: 'yadz',
@@ -86,7 +86,7 @@ export const PROJECTS_YADZ = [
     desc: '망명한 여자와 그녀의 아들, 월국의 궁궐 깊은 곳에서 일어났던 허무하고 소란스러운 이야기.',
     imgName:
       'yadz_thumbnail_minayoung.jpg\nyadz_minayoung_1.jpg\nyadz_minayoung_2.jpg\nyadz_minayoung_3.jpg\nyadz_minayoung_4.jpg\nyadz_minayoung_5.jpg\nyadz_minayoung_6.jpg',
-    instaId: '@a03_mmmm',
+    instaId: 'a03_mmmm',
   },
   {
     club: 'yadz',
@@ -132,7 +132,7 @@ export const PROJECTS_YADZ = [
     desc: '하늘 위에서 떠오르는 리듬과, 불꽃 아래에서 흔들리는 베이스.',
     imgName:
       'yadz_thumbnail_shinjeongeun.jpg\nyadz_shinjeongeun_1.jpg\nyadz_shinjeongeun_2.jpg\nyadz_shinjeongeun_3.jpg\nyadz_shinjeongeun_4.jpg\nyadz_shinjeongeun_5.jpg\nyadz_shinjeongeun_6.jpg',
-    instaId: '@_sliver0225',
+    instaId: '_sliver0225',
   },
   {
     club: 'yadz',
@@ -141,7 +141,7 @@ export const PROJECTS_YADZ = [
     desc: '봄의 끝과 여름의 시작. 그 틈의 꽃바구니',
     imgName:
       'yadz_thumbnail_sungyeon.jpg, yadz_sungyeon_1.jpg, yadz_sungyeon_2.jpg, yadz_sungyeon_3.jpg, yadz_sungyeon_4.jpg, yadz_sungyeon_5.jpg, yadz_sungyeon_06.jpg',
-    instaId: '@foreverhan66',
+    instaId: 'foreverhan66',
   },
   {
     club: 'yadz',
@@ -159,7 +159,7 @@ export const PROJECTS_YADZ = [
     desc: '눈을 떴더니 낯선 천장, 그토록 원했던 로판에 입성했다! “근데 대체 여기가 어디야?!” 당황한 순간, 책상 위 한 권의 책이 눈에 들어온다.',
     imgName:
       'yadz_thumbnail_yunseojung.jpg\nyadz_yunseojung_1.jpg\nyadz_yunseojung_2.jpg\nyadz_yunseojung_3.jpg\nyadz_yunseojung_4.jpg\nyadz_yunseojung_5.jpg',
-    instaId: '@qqwqqqpt',
+    instaId: 'qqwqqqpt',
   },
   {
     club: 'yadz',
@@ -167,7 +167,7 @@ export const PROJECTS_YADZ = [
     author: '윤수훈',
     desc: '신의 그릇으로 추대받던 아이. 형용할 수 없는 공포가 그녀를 감싼다',
     imgName: 'yadz_thumbnail_yoonsuhoon.jpg\nyadz_yoonsuhoon_1.jpg',
-    instaId: '@zeki0314',
+    instaId: 'zeki0314',
   },
   {
     club: 'yadz',
@@ -193,9 +193,8 @@ export const PROJECTS_YADZ = [
     title: '수행합시다, 잡생각입니다',
     author: '이준경',
     desc: '‘집중과 잡생각 사이’에서 이루어지는 수행의 상태',
-    imgName:
-      'yadz_thumbnail_leejungyoung.jpeg, yadz_leejungyoung_1.jpg, yadz_leejungyoung_2.jpg, yadz_leejungyoung_3.jpg, yadz_leejungyoung_4.jpg, yadz_leejungyoung_5.jpg, yadz_leejungyoung_6.jpg',
-    instaId: '@e2young_',
+    imgName: 'yadz_thumbnail_leejungyoung.jpeg',
+    instaId: 'e2young_',
     videoLink: 'https://youtu.be/2YLoMnsT6Zs',
   },
   {
@@ -205,7 +204,7 @@ export const PROJECTS_YADZ = [
     desc: '기이한 생명들을 기록하고 해설하다',
     imgName:
       'yadz_thumbnail_limyujin-01.jpg, yadz_limyujin_1.jpg, yadz_limyujin_2.jpg, yadz_limyujin_3.jpg',
-    instaId: '@jinsaomiii',
+    instaId: 'jinsaomiii',
   },
   {
     club: 'yadz',
@@ -261,7 +260,7 @@ export const PROJECTS_YADZ = [
     desc: '낮과 밤이 바뀌지 않는 미지의 행성, 페르세포네. 이곳에서 당신은 구조대원이 도착할 때까지 나머지 생존자 2명과 일주일의 시간을 보내야 한다.',
     imgName:
       'yadz_thumbnail_handain.png, yadz_handain_1.png, yadz_handain_2.png, yadz_handain_3.png',
-    instaId: '@purplelemon1314',
+    instaId: 'purplelemon1314',
   },
   {
     club: 'yadz',

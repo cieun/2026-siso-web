@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import Footer from '../../components/common/Footer';
 import TextBox from '../../components/common/TextBox';
-import { ARCHIVE_SCENE_IMAGES, ARCHIVE_CLUB_IMAGES } from './data/archiveData';
+import {
+  ARCHIVE_SCENE_IMAGES,
+  ARCHIVE_GOODS_IMAGES,
+  ARCHIVE_CLUB_IMAGES,
+} from './data/archiveData';
 
 const SUPABASE_URL =
   'https://qlxpkabuqlhllqtcczhl.supabase.co/storage/v1/object/public/projects/archive/';
@@ -65,6 +69,22 @@ const Archive = () => {
                 key={`scene-${index}`}
                 src={`${SUPABASE_URL}${img}`}
                 alt={`전경 사진 ${index + 1}`}
+                loading="lazy"
+              />
+            ))}
+          </ImageList>
+        </ArchiveColumn>
+        <HorizontalLine></HorizontalLine>
+        <ArchiveColumn>
+          <TextBox textAlign="center" fontSize="2rem" paddingType="narrow">
+            굿즈 사진
+          </TextBox>
+          <ImageList>
+            {ARCHIVE_GOODS_IMAGES.map((img, index) => (
+              <ArchiveImage
+                key={`goods-${index}`}
+                src={`${SUPABASE_URL}${img}`}
+                alt={`굿즈 사진 ${index + 1}`}
                 loading="lazy"
               />
             ))}

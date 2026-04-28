@@ -23,8 +23,7 @@ export const PROJECTS_ADRENALIN = [
     title: 'Work, Still Visible',
     author: '김유진',
     desc: '노동자에게 필요한 것은 단순한 멋부림이 아닌 기능과 효율이었다. 칼하트의 행보엔 노동의 흔적이 살아 숨쉰다.',
-    imgName:
-      'Adrenalin_thumbnail_kimyujin.jpg, adrenalin_kimyujin_01.jpg, adrenalin_kimyujin_02.jpg, adrenalin_kimyujin_03.jpg, adrenalin_kimyujin_04.jpg',
+    imgName: 'Adrenalin_thumbnail_kimyujin.jpg, adrenalin_kimyujin_03.jpg',
     instaId: 'yuuawavve',
   },
   {
@@ -53,7 +52,7 @@ export const PROJECTS_ADRENALIN = [
     desc: '예술과 일상의 경계를 허물고 새로운 패턴을 그려간다. 이를 통해 FINCA는 가장 개인적이면서도 예술적인 공간으로 나아간다. ',
     imgName:
       'adrenalin_thumbnail_chohannah.jpg, adrenalin_chohannah_1.jpg,adrenalin_chohannah_2.jpg,adrenalin_chohannah_3.jpg, adrenalin_chohannah_4.jpg, adrenalin_chohannah_5.jpg ',
-    instaId: 'soyawnprk coolcool.bara',
+    instaId: 'soyawnprk, coolcool.bara',
     videoLink: 'https://youtu.be/VaFkyFBeSog',
   },
   {
@@ -70,8 +69,7 @@ export const PROJECTS_ADRENALIN = [
     title: "Youth is now, Let's wear it now!",
     author: '신수완',
     desc: '오래 입은 옷에는 시간의 흔적이 남는다. 입고, 걷고, 머물렀던 시간들. 리바이스와 함께한 청춘의 기록.',
-    imgName:
-      'adrenalin_thumbnail_Shinsuwan.jpg, adrenalin_Shinsuwan_1.jpg, adrenalin_Shinsuwan_2.jpg, adrenalin_Shinsuwan_3.jpg, adrenalin_Shinsuwan_4.jpg, adrenalin_Shinsuwan_5.jpg',
+    imgName: 'adrenalin_thumbnail_Shinsuwan.jpg, adrenalin_Shinsuwan_5.jpg',
     instaId: 'so_xoowan',
   },
   {
@@ -126,8 +124,6 @@ export const PROJECTS_ADRENALIN = [
     title: '의식하지 않아도 남는 것들',
     author: '하지수',
     desc: '형태보다 먼저 남는 향의 인상을 해파리의 느린 유영에 포개었다. 투명한 빛의 결 위로 감각은 공간 속에 고요히 번져간다. 보이지 않는 향의 여운이 오래 머물기를 기다린다.',
-    imgName:
-      'adrenalin_hajisoo_1, adrenalin_hajisoo_2, adrenalin_hajisoo_3.jpg',
     instaId: 'l1ke4u_',
   },
 ];

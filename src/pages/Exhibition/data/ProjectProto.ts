@@ -51,6 +51,6 @@ export const PROJECTS_PROTO = [
     desc: '설계된 도파민의 시대, 감정은 자연이 아니라 배열과 속도로 유도된다. 특히 디자이너는 감정을 느끼게끔 하기 위해 앞장 서서 무엇을 먼저 보고 어떻게 느낄지 설계하고, 조작한다. 우리는 타인을 보는걸까 아니면 설계된 맥락을 보는걸까? 그리고 배열을 만드는 디자이너는 과연 중립적일까?',
     imgName:
       'proto_AyoungChon_1.jpg,\nproto_AyoungChon_2.jpg,\nproto_AyoungChon_3.jpg,\nproto_AyoungChon_4.jpg,\nproto_AyoungChon_5.jpg',
-    instaId: 'ayouiee / a0chive',
+    instaId: 'ayouiee, a0chive',
   },
 ];

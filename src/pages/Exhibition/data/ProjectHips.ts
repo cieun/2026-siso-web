@@ -20,7 +20,7 @@ export const PROJECTS_HIPS = [
     title: 'booth81514525',
     author: '박동주',
     desc: '누운 채로 바라보는 작은 화면, 스크롤, 클릭과 망상의 흔적. 인스타그램의 환영 속에서 기다립니다. @booth81514525',
-    imgName: 'hips_thumbnail_parkdongju.jpg, hips_parkdongju_1.jpg ',
+    imgName: 'hips_thumbnail_parkdongju.jpg',
     instaId: 'sakedotcom',
   },
   {

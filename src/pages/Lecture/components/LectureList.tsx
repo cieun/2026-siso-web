@@ -43,6 +43,7 @@ const DescriptionArea = styled.div<{ $isOpen: boolean }>`
   font-weight: 600;
   word-break: keep-all;
   font-size: 1.6rem;
+  white-space: pre-wrap;
 `;
 
 const LectureTitle = styled.div`

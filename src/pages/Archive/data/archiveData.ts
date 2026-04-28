@@ -15,6 +15,20 @@ export const ARCHIVE_SCENE_IMAGES = [
   'foreground14.jpg',
 ];
 
+export const ARCHIVE_GOODS_IMAGES = [
+  'goods1.jpg',
+  'goods2.jpg',
+  'goods3.jpg',
+  'goods4.jpg',
+  'goods5.jpg',
+  'goods6.jpg',
+  'goods7.jpg',
+  'goods8.jpg',
+  'goods9.jpg',
+  'goods10.jpg',
+  'goods11.jpg',
+];
+
 export const ARCHIVE_CLUB_IMAGES = [
   'greenbee-1.jpg',
   'dromapic-1.jpg',
