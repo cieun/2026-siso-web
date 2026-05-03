@@ -1,40 +1,40 @@
+import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import TextBox from '../common/TextBox';
 
 const Overlay = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2000;
   width: 100%;
   height: 100vh;
   height: 100dvh;
   background: ${({ theme }) =>
     `linear-gradient(180deg, ${theme.colors.oceanWater} 0%, ${theme.colors.background} 100%)`};
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 `;
 
 const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 24px 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: fixed;
+  top: 0;
   z-index: 1000;
+  width: 100%;
+  padding: 24px 24px;
 `;
 
 const CloseButton = styled.div`
-  cursor: pointer;
   border: none;
   font-weight: 800;
+  cursor: pointer;
 `;
 
 const NavList = styled.nav`
@@ -45,11 +45,11 @@ const NavList = styled.nav`
 `;
 
 const NavItemWrapper = styled.div`
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 6rem;
+  cursor: pointer;
 `;
 
 const MobileMenu = ({ onClose }: { onClose: () => void }) => {

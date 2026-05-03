@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { AboutSection } from './AboutSection';
-import TextBox from '../../../components/common/TextBox';
-import SectionTitle from './SectionTitle';
 import { goodsData } from '../data/goodsData';
+import { AboutSection } from './AboutSection';
+import SectionTitle from './SectionTitle';
+import TextBox from '../../../components/common/TextBox';
 
 import goodsImg from '../assets/goods.gif';
 
@@ -24,9 +24,9 @@ const GoodsList = styled.div`
 const GoodsItem = styled.div`
   display: grid;
   grid-template-columns: 1fr 11fr;
-  border-top: 3px solid #000;
-  padding-top: 20px;
   height: 11rem;
+  padding-top: 20px;
+  border-top: 3px solid #000;
 `;
 
 const TextContent = styled.div`
@@ -43,13 +43,13 @@ const ItemName = styled.span`
 `;
 
 const ItemEngName = styled.span`
-  font-size: 2.8rem;
   margin-right: 6px;
+  font-size: 2.8rem;
 `;
 
 const ItemKorName = styled.span`
-  font-size: 1.5rem;
   margin-top: 5px;
+  font-size: 1.5rem;
 `;
 
 const ItemPrice = styled.span`
@@ -57,7 +57,6 @@ const ItemPrice = styled.span`
 `;
 
 const ImagePlaceholder = styled.div`
-  // background-color: #d9d9d9;
   display: flex;
   justify-content: center;
   align-items: center;

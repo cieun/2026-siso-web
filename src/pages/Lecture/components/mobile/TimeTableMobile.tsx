@@ -1,5 +1,5 @@
-import { Fragment } from 'react';
 import styled, { useTheme } from 'styled-components';
+import { Fragment } from 'react';
 import TextBox from '../../../../components/common/TextBox';
 
 const GRID_CONFIG = {
@@ -35,8 +35,8 @@ const generateGridLines = (excludedPoints: string[]) => {
 };
 
 const TableWrapper = styled.div`
-  width: 100%;
   position: relative;
+  width: 100%;
   padding: 0 0 0 30px;
 `;
 
@@ -44,10 +44,10 @@ const DayHeader = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 10px;
-  text-align: center;
-  font-weight: 800;
   font-size: 1.4rem;
+  font-weight: 800;
   line-height: 1.2;
+  text-align: center;
 `;
 
 const GridContainer = styled.div`
@@ -96,18 +96,18 @@ const GridContainer = styled.div`
 const DottedLine = styled.div<{ $column: number }>`
   position: absolute;
   left: ${({ $column }) => `calc((${$column - 1} * (100% - 24%)) / 3)`};
+  z-index: 0;
   width: 24%;
   height: ${GRID_CONFIG.LINE_WIDTH}px;
   background-image: linear-gradient(to right, #000 2px, transparent 2px);
   background-size: 10px ${GRID_CONFIG.LINE_WIDTH}px;
-  z-index: 0;
 `;
 const TimeLabel = styled.span<{ $topIdx: number }>`
   position: absolute;
   left: -35px;
   top: ${({ $topIdx }) => getVal($topIdx, -9)};
-  font-weight: 800;
   font-size: 1.4rem;
+  font-weight: 800;
 `;
 
 const TimeBlock = styled.div<{
@@ -118,25 +118,21 @@ const TimeBlock = styled.div<{
   $isHalf?: boolean;
   $halfPos?: 'left' | 'right';
 }>`
-  position: absolute;
-  top: ${({ $top }) => $top}vh;
-  left: ${({ $column }) => `calc((${$column - 1} * (100% - 24.5%)) / 3)`};
-
-  ${({ $isHalf, $halfPos }) =>
-    $isHalf && $halfPos === 'right' && `margin-left: calc(12.6%);`}
-
-  width: ${({ $isHalf }) =>
-    $isHalf ? 'calc(12.4% - 8px)' : 'calc(25% - 8px)'};
-  height: ${({ $height }) => $height}vh;
-
-  background: ${({ $color }) =>
-    `linear-gradient(140deg, ${$color} 0%, #fff 100%)`};
-  box-shadow: 3px 3px 0px 3px ${({ $color }) => $color};
-
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: ${({ $top }) => $top}vh;
+  left: ${({ $column }) => `calc((${$column - 1} * (100% - 24.5%)) / 3)`};
   z-index: 2;
+  width: ${({ $isHalf }) =>
+    $isHalf ? 'calc(12.4% - 8px)' : 'calc(25% - 8px)'};
+  height: ${({ $height }) => $height}vh;
+  ${({ $isHalf, $halfPos }) =>
+    $isHalf && $halfPos === 'right' && `margin-left: calc(12.6%);`}
+  background: ${({ $color }) =>
+    `linear-gradient(140deg, ${$color} 0%, #fff 100%)`};
+  box-shadow: 3px 3px 0px 3px ${({ $color }) => $color};
 `;
 
 interface TimeTableProps {

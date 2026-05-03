@@ -1,18 +1,18 @@
+import styled from 'styled-components';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import MobileMenu from './MobileMenu';
 import TextBox from '../common/TextBox';
 
 const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 24px 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: fixed;
+  top: 0;
   z-index: 1000;
+  width: 100%;
+  padding: 24px 24px;
 `;
 
 const LogoWrapper = styled.div`
@@ -20,9 +20,9 @@ const LogoWrapper = styled.div`
 `;
 
 const MenuButton = styled.div`
-  cursor: pointer;
   border: none;
   font-weight: 800;
+  cursor: pointer;
 `;
 
 const MobileHeader = () => {

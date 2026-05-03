@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import { PROJECTS_GREENBEE } from '../../../data/ProjectGreenbee';
 import { PROJECTS_DROMAPIC } from '../../../data/ProjectDromapic';
 import { PROJECTS_IRAY } from '../../../data/ProjectIray';
@@ -51,8 +51,8 @@ const ProjectCard = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const ImageWrapper = styled.div<{ $isActive?: boolean }>`
@@ -67,7 +67,6 @@ const ImageWrapper = styled.div<{ $isActive?: boolean }>`
   }
 
   &::after {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -80,6 +79,7 @@ const ImageWrapper = styled.div<{ $isActive?: boolean }>`
 
     opacity: ${({ $isActive }) => ($isActive ? 0 : 1)};
     transition: opacity 0.2s ease-in-out;
+    content: '';
   }
 
   ${ProjectCard}:hover &::after {
@@ -89,24 +89,20 @@ const ImageWrapper = styled.div<{ $isActive?: boolean }>`
 
 const Info = styled.div<{ $isActive?: boolean }>`
   position: absolute;
-  bottom: 15px;
   left: 15px;
   right: 15px;
-  color: ${({ $isActive }) => ($isActive ? '#ffffff' : 'white')};
+  bottom: 15px;
   z-index: 2;
-  font-weight: 800;
   font-size: 1.5rem;
-
-  .author {
-  }
+  font-weight: 800;
+  color: ${({ $isActive }) => ($isActive ? '#ffffff' : 'white')};
 
   .title {
+    display: block;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
-    width: 100%;
-    display: block;
   }
 `;
 
@@ -119,10 +115,10 @@ const Pagination = styled.div`
 `;
 
 const PageNumber = styled.span<PaginationProps>`
-  cursor: pointer;
   font-size: 2rem;
   font-weight: bold;
   color: ${(props) => (props.$active ? '#aeaeae' : '#000')};
+  cursor: pointer;
 `;
 
 const ProjectGridMobile = ({
@@ -175,7 +171,6 @@ const ProjectGridMobile = ({
           );
 
           const finalDisplayImage = thumbnailImage || imageList[0] || '';
-          // const finalDisplayImage = thumbnailImage || '';
 
           const formatAuthor = (authorStr: string) => {
             if (!authorStr) return '';

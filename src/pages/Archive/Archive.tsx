@@ -13,12 +13,10 @@ const SUPABASE_URL =
 const PageWrapper = styled.div`
   width: 100%;
   height: 100vh;
+  padding: 0 36px;
   background: ${({ theme }) =>
     `linear-gradient(180deg, ${theme.colors.sportyPink} 0%, ${theme.colors.background} 100%)`};
-
   overflow-x: hidden;
-
-  padding: 0 36px;
 `;
 
 // const ArchiveContent = styled.div`
@@ -37,12 +35,12 @@ const PageWrapper = styled.div`
 // `;
 
 const ArchiveContent = styled.div`
-  width: 100%;
-  min-height: 80vh;
-  padding: 180px 0 80px 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  padding: 180px 0 80px 0;
 `;
 
 const ArchiveColumn = styled.div`
@@ -53,8 +51,8 @@ const ImageList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 48px;
-  margin-top: 48px;
   width: 100%;
+  margin-top: 48px;
 `;
 
 const ArchiveImage = styled.img`
@@ -63,18 +61,18 @@ const ArchiveImage = styled.img`
 `;
 
 const VerticalLine = styled.div`
-  width: 2px;
-  background-color: #000;
   align-self: stretch;
+  width: 2px;
   margin: 0 36px;
+  background-color: #000;
 `;
 
 const HorizontalLine = styled.div`
+  align-self: stretch;
   width: 100%;
   height: 2px;
-  background-color: #000;
-  align-self: stretch;
   margin: 36px 0;
+  background-color: #000;
 `;
 
 const Archive = () => {

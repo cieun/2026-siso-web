@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
 import TextBox from '../../../../components/common/TextBox';
 import { projectDetailData } from '../../data/ProjectDetailData';
 
@@ -38,10 +38,10 @@ const InfoSection = styled.div`
 `;
 
 const ExhibitionTitle = styled.div`
-  font-size: 2rem;
   margin-bottom: 20px;
-  font-weight: 800;
   padding: 1px 0;
+  font-size: 2rem;
+  font-weight: 800;
 
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;

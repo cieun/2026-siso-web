@@ -1,16 +1,16 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import { AboutSection } from './AboutSection';
+import { useState } from 'react';
 import { visitorGuideData } from '../data/visitorGuideData';
-import TextBox from '../../../components/common/TextBox';
+import { AboutSection } from './AboutSection';
 import SectionTitle from './SectionTitle';
+import TextBox from '../../../components/common/TextBox';
 
+import arrow from '../assets/arrow.svg';
 import mapR from '../assets/map_r.svg';
-import mapS from '../assets/map_s.svg';
 import mapR1f from '../assets/map_r1f.svg';
+import mapS from '../assets/map_s.svg';
 import mapS3f from '../assets/map_s3f.svg';
 import schooMap from '../assets/school_map.svg';
-import arrow from '../assets/arrow.svg';
 
 const BUILDING_LAYOUTS = [
   {
@@ -30,13 +30,13 @@ const BUILDING_LAYOUTS = [
 ];
 
 const SectionContainer = styled(AboutSection)`
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
   position: relative;
   height: auto;
   min-height: 100vh;
   padding: 100px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 120px;
 `;
 
 // 왼쪽 단
@@ -44,8 +44,8 @@ const SectionContainer = styled(AboutSection)`
 const GuideContent = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
   gap: 10px;
+  position: relative;
 `;
 
 const InfoContent = styled.div`
@@ -55,11 +55,11 @@ const InfoContent = styled.div`
 `;
 
 const SchoolMap = styled.div`
-  width: 100%;
-  height: 42vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 42vh;
   margin-bottom: 30px;
 `;
 
@@ -97,43 +97,41 @@ const BuildingRow = styled.div`
 const MapBox = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 50px;
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 50px;
 `;
 
 const BaseMapImage = styled.img<{ $width: string }>`
-  width: ${({ $width }) => $width};
-  min-width: 200px;
-  height: auto;
   position: absolute;
   top: 50px;
   left: 50%;
+  width: ${({ $width }) => $width};
+  min-width: 200px;
+  height: auto;
   transform: translate(-50%, 0);
-
   transition:
     transform 0.4s ease-in-out,
     opacity 0.4s ease-in-out;
 `;
 
 const DefaultMapImage = styled(BaseMapImage)<{ $isHovered: boolean }>`
+  z-index: ${({ $isHovered }) => ($isHovered ? 1 : 2)};
   transform: translate(-50%, 0)
     scale(${({ $isHovered }) => ($isHovered ? 0 : 1)});
   opacity: ${({ $isHovered }) => ($isHovered ? 0 : 1)};
-  z-index: ${({ $isHovered }) => ($isHovered ? 1 : 2)};
 `;
 
 const HoverMapImage = styled(BaseMapImage)<{
   $isHovered: boolean;
   $width: string;
 }>`
+  width: ${({ $width }) => $width};
+  z-index: ${({ $isHovered }) => ($isHovered ? 2 : 1)};
   transform: translate(-50%, 0)
     scale(${({ $isHovered }) => ($isHovered ? 1 : 0)});
   opacity: ${({ $isHovered }) => ($isHovered ? 1 : 0)};
-  z-index: ${({ $isHovered }) => ($isHovered ? 2 : 1)};
-
-  width: ${({ $width }) => $width};
 `;
 
 const TeamListWrapper = styled.div`

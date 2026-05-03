@@ -1,30 +1,21 @@
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-// import GroupNames from '../assets/poster_clubTexts_right.svg';
 import Box1 from '../assets/poster_label_1.svg';
 import Box2 from '../assets/poster_label_2.svg';
 import Box3 from '../assets/poster_label_3.svg';
 import Box4 from '../assets/poster_label_4.svg';
 import Box5 from '../assets/poster_label_5.svg';
-
 import Guide from '../assets/guide.svg';
 
-// type Variants = {
-//   [key: string]: any;
-// };
-
 const TextContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
 `;
 
 const MasterGroup = styled.div`
@@ -35,15 +26,6 @@ const MasterGroup = styled.div`
 
 const TextAnimationMobile = () => {
   const isDebugMode = false;
-
-  // const groupNamesVariants: Variants = {
-  //   hidden: { opacity: 0, x: +50 },
-  //   visible: {
-  //     opacity: 1,
-  //     x: 0,
-  //     transition: { duration: 0.8, ease: 'easeOut', delay: 6 },
-  //   },
-  // };
 
   const boxData = [
     { src: Box1, x: 75, y: 12, scale: 0.8 },
@@ -253,18 +235,6 @@ const TextAnimationMobile = () => {
             );
           })}
         </MasterGroup>
-        {/* <motion.div
-          variants={groupNamesVariants}
-          initial={isDebugMode ? 'visible' : 'hidden'}
-          animate="visible"
-          style={{ originX: 0, display: 'flex', justifyContent: 'right' }}
-        >
-          <img
-            src={GroupNames}
-            alt="Names"
-            style={{ width: '70px', transform: 'scale(1)' }}
-          />
-        </motion.div> */}
       </TextContainer>
       <div style={{ position: 'fixed', top: '120px', left: '24px' }}>
         <img src={Guide} style={{ width: '350px', display: 'none' }} />

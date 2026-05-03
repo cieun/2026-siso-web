@@ -26,15 +26,15 @@ interface ProjectDetailProps {
 const DetailContainer = styled.div`
   display: flex;
   grid-template-columns: 1fr;
-  gap: 20px;
   align-items: start;
+  gap: 20px;
   margin-bottom: 50px;
 `;
 
 const InfoSection = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
 `;
 
 const InfoHeader = styled.div<{ $isMultiAuthor?: boolean }>`
@@ -56,16 +56,16 @@ const InfoHeader = styled.div<{ $isMultiAuthor?: boolean }>`
 `;
 
 const Title = styled.h2`
-  font-size: 2rem;
   margin-bottom: 20px;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
+  font-size: 2rem;
 `;
 
 const ImageSection = styled.div`
   display: flex;
-  flex-direction: column; // 💡 이미지를 세로로 정렬
-  gap: 20px; // 💡 이미지 사이의 간격 (원하시는 만큼 조절하세요)
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
   margin-bottom: 40px;
 `;
@@ -75,18 +75,18 @@ const WorkImage = styled.img`
 `;
 
 const Description = styled.p`
-  line-height: 1.6;
-  font-weight: 600;
   margin-bottom: 40px;
+  font-weight: 600;
+  line-height: 1.6;
   word-break: keep-all;
   white-space: pre-wrap;
 
   small {
+    position: relative;
+    top: 2px;
     font-size: 1.4rem;
     vertical-align: super;
     line-height: 0;
-    position: relative;
-    top: 2px;
   }
 `;
 
@@ -97,13 +97,12 @@ const LinkSection = styled.div`
 `;
 
 const LinkItem = styled.a`
+  display: inline-flex;
+  align-items: center;
   font-size: 2rem;
   font-weight: 600;
   color: #6c6c6c;
   cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
 
   svg {
     transform: translateY(2px);

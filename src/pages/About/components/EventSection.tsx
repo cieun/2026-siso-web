@@ -21,8 +21,8 @@ const EventBox = styled.div`
 `;
 
 const TitleGroup = styled.div`
-  text-align: center;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 const EngTitle = styled.h2`
@@ -37,9 +37,9 @@ const KorTitle = styled.p`
 
 const Divider = styled.hr`
   width: 100%;
+  margin: 20px 0 20px 0;
   border: none;
   border-top: 3px solid #000;
-  margin: 20px 0 20px 0;
 `;
 
 const Description = styled.p`
@@ -59,15 +59,15 @@ const BgGraphic = styled.img<{
   bottom: ${({ $bottom }) => $bottom || 'auto'};
   left: ${({ $left }) => $left || 'auto'};
   right: ${({ $right }) => $right || 'auto'};
-  width: ${({ $width }) => $width || 'auto'};
   z-index: 1;
+  width: ${({ $width }) => $width || 'auto'};
   pointer-events: none;
 
   @media (min-width: 768px) and (max-width: 1400px) {
-    width: ${({ $width }) => ($width ? `calc(${$width} * 0.7)` : 'auto')};
     top: ${({ $top }) => ($top ? `calc(${$top} * 0.7)` : 'auto')};
     left: ${({ $left }) => ($left ? `calc(${$left} * 0.7)` : 'auto')};
     bottom: ${({ $bottom }) => ($bottom ? `calc(${$bottom} * 8)` : 'auto')};
+    width: ${({ $width }) => ($width ? `calc(${$width} * 0.7)` : 'auto')};
   }
 `;
 

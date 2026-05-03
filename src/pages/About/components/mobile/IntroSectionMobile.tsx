@@ -1,8 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import { AboutSection } from '../AboutSection';
-// import TextBox from '../../../../components/common/TextBox';
-import TextAnimation from '../../Animation/TextAnimationMobile';
 import { introData } from '../../data/introData';
+import { AboutSection } from '../AboutSection';
+import TextAnimation from '../../Animation/TextAnimationMobile';
 
 import Poster1 from '../../assets/intro_poster_1.jpg';
 import Poster2 from '../../assets/intro_poster_2.jpg';
@@ -21,12 +20,6 @@ const TitleContainer = styled.div`
   align-items: center;
   height: 45vh;
   font-weight: 800;
-
-  // @media (min-width: 400px) and (max-width: 768px) {
-  //   && span.content-text {
-  //     font-size: 2.2rem;
-  //   }
-  }
 `;
 
 const slide = keyframes`
@@ -39,11 +32,11 @@ const slide = keyframes`
 
 const PosterGrid = styled.div`
   display: flex;
-  overflow: hidden;
+  position: relative;
   width: calc(100vw - 48px);
   aspect-ratio: 1 / 1.414;
-  position: relative;
   margin: 0 auto 20px auto;
+  overflow: hidden;
 `;
 
 const SlideTrack = styled.div`
@@ -54,18 +47,18 @@ const SlideTrack = styled.div`
 `;
 
 const PosterImage = styled.img`
+  flex-shrink: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
 `;
 
 const InfoGrid = styled.div`
   display: grid;
   grid-template-columns: 110px 1fr;
-  font-size: 2rem;
-  gap: 0.8rem 20px;
   align-items: start;
+  gap: 0.8rem 20px;
+  font-size: 2rem;
 `;
 
 const InfoLabel = styled.span`
@@ -75,8 +68,8 @@ const InfoLabel = styled.span`
 
 const InfoValue = styled.span`
   font-weight: 600;
-  color: #000;
   line-height: 1.4;
+  color: #000;
 `;
 
 const IntroSectionMobile = () => {
@@ -86,9 +79,6 @@ const IntroSectionMobile = () => {
     <AboutSection>
       <ContentContainer>
         <TitleContainer>
-          {/* <TextBox fontSize="1.8rem" textAlign="center" rotate={0} width="100%">
-            {introData.title}
-          </TextBox> */}
           <TextAnimation />
         </TitleContainer>
         <PosterGrid>

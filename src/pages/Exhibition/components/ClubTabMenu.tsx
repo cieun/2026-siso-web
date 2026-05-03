@@ -1,21 +1,21 @@
-import { Fragment } from 'react';
 import styled from 'styled-components';
+import { Fragment } from 'react';
 import { exhibitionData } from '../data/ExhibitionData';
 
 const NavContainer = styled.nav`
   display: flex;
   justify-content: right;
+  z-index: 2000;
   margin-top: 20px;
   margin-bottom: 60px;
-  font-weight: 800;
   font-size: 2rem;
-  z-index: 2000;
+  font-weight: 800;
 `;
 
 const TabItem = styled.span<{ $isActive: boolean }>`
-  cursor: pointer;
   color: ${({ $isActive }) => ($isActive ? '#fff' : '#000')};
   transition: color 0.2s;
+  cursor: pointer;
 
   &:hover {
     color: #fff;

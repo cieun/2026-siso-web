@@ -3,20 +3,20 @@ import TextBox from '../../../../../components/common/TextBox';
 import { projectDetailData } from '../../../data/ProjectDetailData';
 
 const ContentContainer = styled.div`
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
   align-items: start;
+  gap: 20px;
+  width: 100%;
 `;
 
 const ClubName = styled.div`
-  width: 100%;
-  font-size: 3rem;
-  font-weight: 800;
   display: flex;
+  width: 100%;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
+  font-size: 3rem;
+  font-weight: 800;
 `;
 
 const PosterContainer = styled.div`
@@ -43,13 +43,12 @@ const InfoSection = styled.div`
 `;
 
 const ExhibitionTitle = styled.div`
-  font-size: 2rem;
   margin-bottom: 20px;
-  font-weight: 800;
   padding: 1px 0;
-
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
+  font-size: 2rem;
+  font-weight: 800;
 `;
 
 const DescriptionText = styled.p`

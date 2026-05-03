@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import QuickNav from './components/common/QuickNav';
-
 import MobileHeader from './components/mobile/MobileHeader';
 
 import Main from './pages/Main';
@@ -17,23 +16,23 @@ const IS_OPEN = true;
 const ComingSoon = () => (
   <div
     style={{
-      height: '100dvh',
       display: 'flex',
-      padding: '36px',
       flexDirection: 'column',
-      alignItems: 'center',
       justifyContent: 'center',
-      background: '#ffffff',
-      color: '#000000',
+      alignItems: 'center',
+      height: '100dvh',
+      padding: '36px',
       fontWeight: 800,
+      color: '#000000',
+      background: '#ffffff',
     }}
   >
     <h1
       style={{
-        fontSize: '2.5rem',
         marginBottom: '1rem',
-        textAlign: 'center',
+        fontSize: '2.5rem',
         lineHeight: '1.4',
+        textAlign: 'center',
       }}
     >
       2026 홍익대학교 시각디자인과 소모임 축제주간 : SISO

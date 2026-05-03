@@ -20,41 +20,38 @@ const StyledBox = styled.div<{
   $fontWeight: number | string;
   $paddingType: PaddingType;
 }>`
-  background: transparent;
-  width: ${({ $width }) => $width || 'fit-content'};
-  transform: rotate(${({ $rotate }) => $rotate}deg);
   display: inline-flex;
   flex-direction: column;
-  box-sizing: border-box;
-
-  text-align: ${({ $textAlign }) => $textAlign};
   align-items: ${({ $textAlign }) =>
     $textAlign === 'center'
       ? 'center'
       : $textAlign === 'right'
         ? 'flex-end'
         : 'flex-start'};
+  box-sizing: border-box;
+  width: ${({ $width }) => $width || 'fit-content'};
+  text-align: ${({ $textAlign }) => $textAlign};
+  background: transparent;
+  transform: rotate(${({ $rotate }) => $rotate}deg);
 
   span.content-text {
-    background: #fff;
+    display: inline-block;
     padding: ${({ $paddingType }) =>
       $paddingType === 'narrow'
         ? '0.1em 0.57em'
         : $paddingType === 'wide'
           ? '0.75em 1.3em'
-          : '0.35em 0.89em'}; /* default 값 */
-    line-height: 1.7;
-    display: inline-block;
-
+          : '0.35em 0.89em'}; /* default */
     font-size: ${({ $fontSize }) => $fontSize};
     font-weight: ${({ $fontWeight }) => $fontWeight};
-
+    line-height: 1.7;
     word-break: keep-all;
     white-space: pre-wrap;
+    background: #fff;
 
     sup {
-      font-size: 0.45em;
       margin-left: 0.4em;
+      font-size: 0.45em;
       vertical-align: super;
     }
 

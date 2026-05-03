@@ -1,26 +1,26 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import TimeTable from './components/TimeTable';
-import LectureList from './components/LectureList';
+import { useState } from 'react';
 import Footer from '../../components/common/Footer';
+import LectureList from './components/LectureList';
+import TimeTable from './components/TimeTable';
 
 const PageWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.lasPalmas} 0%, ${theme.colors.background} 100%)`};
-  padding: 0 36px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  padding: 0 36px;
+  background: ${({ theme }) =>
+    `linear-gradient(180deg, ${theme.colors.lasPalmas} 0%, ${theme.colors.background} 100%)`};
 `;
 
 const LectureContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  padding: 180px 0 0 0;
   height: 850px;
+  padding: 180px 0 0 0;
 `;
 
 const Lecture = () => {

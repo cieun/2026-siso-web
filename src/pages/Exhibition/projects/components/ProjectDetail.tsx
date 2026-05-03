@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import TextBox from '../../../../components/common/TextBox';
 import { IoLink } from 'react-icons/io5';
 
@@ -45,9 +45,9 @@ const WorkImage = styled.img<{ $isLandscape: boolean }>`
 `;
 
 const InfoSection = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
 `;
 
 const InfoHeader = styled.div<{ $isMultiAuthor?: boolean }>`
@@ -69,25 +69,25 @@ const InfoHeader = styled.div<{ $isMultiAuthor?: boolean }>`
 `;
 
 const Title = styled.h2`
-  font-size: 2rem;
   margin-bottom: 20px;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
+  font-size: 2rem;
 `;
 
 const Description = styled.p`
-  line-height: 1.6;
-  font-weight: 600;
   margin-bottom: 40px;
+  font-weight: 600;
+  line-height: 1.6;
   word-break: keep-all;
   white-space: pre-wrap;
 
   small {
-    font-size: 1.4rem;
-    vertical-align: super;
-    line-height: 0;
     position: relative;
     top: 2px;
+    font-size: 1.4rem;
+    line-height: 0;
+    vertical-align: super;
   }
 `;
 
@@ -98,13 +98,12 @@ const LinkSection = styled.div`
 `;
 
 const LinkItem = styled.a`
+  display: inline-flex;
+  align-items: center;
   font-size: 2rem;
   font-weight: 600;
   color: #6c6c6c;
   cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
 
   svg {
     transform: translateY(2px);
@@ -117,16 +116,16 @@ const LinkItem = styled.a`
 
 const ThumbnailSlide = styled.div`
   display: grid;
-  gap: 40px 20px;
   grid-template-columns: repeat(6, 1fr);
+  gap: 40px 20px;
 `;
 
 const ThumbnailWrapper = styled.div`
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -141,10 +140,8 @@ const ThumbnailOverlay = styled.div<{ $isActive: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-
   background-color: ${({ $isActive }) =>
     $isActive ? 'rgba(255, 255, 255, 0.6)' : 'transparent'};
-
   transition: background-color 0.2s ease;
 
   &:hover {

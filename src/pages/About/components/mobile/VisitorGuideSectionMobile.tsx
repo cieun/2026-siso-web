@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import { AboutSection } from '../AboutSection';
+import { useState } from 'react';
 import { visitorGuideData } from '../../data/visitorGuideData';
-import TextBox from '../../../../components/common/TextBox';
+import { AboutSection } from '../AboutSection';
 import SectionTitle from '../SectionTitle';
+import TextBox from '../../../../components/common/TextBox';
 
 import mapR from '../../assets/map_r.svg';
 import mapS from '../../assets/map_s.svg';
@@ -30,18 +30,18 @@ const BUILDING_LAYOUTS = [
 ];
 
 const SectionContainer = styled(AboutSection)`
+  display: flex;
+  flex-direction: column;
   position: relative;
   height: auto;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 `;
 
 const GuideContent = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
   gap: 10px;
+  position: relative;
   width: 100%;
 `;
 
@@ -52,10 +52,10 @@ const InfoContent = styled.div`
 `;
 
 const SchoolMap = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   margin-bottom: 30px;
   img {
     width: 100%;
@@ -108,9 +108,9 @@ const BaseMapImage = styled.img<{ $width: string }>`
 
 const DefaultMapImage = styled(BaseMapImage)<{ $isHovered: boolean }>`
   position: relative;
+  z-index: ${({ $isHovered }) => ($isHovered ? 1 : 2)};
   transform: scale(${({ $isHovered }) => ($isHovered ? 0 : 1)});
   opacity: ${({ $isHovered }) => ($isHovered ? 0 : 1)};
-  z-index: ${({ $isHovered }) => ($isHovered ? 1 : 2)};
 `;
 
 const HoverMapImage = styled(BaseMapImage)<{
@@ -120,12 +120,11 @@ const HoverMapImage = styled(BaseMapImage)<{
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, 0)
-    scale(${({ $isHovered }) => ($isHovered ? 1 : 0)});
-
-  opacity: ${({ $isHovered }) => ($isHovered ? 1 : 0)};
   z-index: ${({ $isHovered }) => ($isHovered ? 2 : 1)};
   width: ${({ $width }) => $width};
+  transform: translate(-50%, 0)
+    scale(${({ $isHovered }) => ($isHovered ? 1 : 0)});
+  opacity: ${({ $isHovered }) => ($isHovered ? 1 : 0)};
 `;
 
 const TeamListWrapper = styled.div`

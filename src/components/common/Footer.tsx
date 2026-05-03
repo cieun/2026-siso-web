@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  width: 100%;
-  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 800;
+  width: 100%;
   padding-bottom: 24px;
+  font-weight: 800;
+  background: transparent;
 `;
 
 const FooterLogo = styled.div`

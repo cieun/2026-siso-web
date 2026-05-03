@@ -1,37 +1,33 @@
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-// import TextBox from '../../components/common/TextBox';
-import { exhibitionData } from './data/ExhibitionData';
 import Footer from '../../components/common/Footer';
+import { exhibitionData } from './data/ExhibitionData';
 
 const ExhibitionWrapper = styled.div`
-  width: 100%;
-  height: 100dvh;
-  min-height: 100dvh;
-  background: ${({ theme }) =>
-    `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
-
   position: fixed;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
   padding: 0 24px;
+  background: ${({ theme }) =>
+    `linear-gradient(180deg, ${theme.colors.redShimmer} 0%, ${theme.colors.background} 100%)`};
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
-
-  scrollbar-width: none;
-
-  -ms-overflow-style: none;
 `;
 const ObjectSection = styled.div`
-  width: 100%;
-  position: relative;
-  margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 80px;
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
   margin-bottom: 60px;
 `;
 
@@ -39,12 +35,12 @@ const ObjectContainer = styled.div<{
   $top: string;
   $left: string;
 }>`
-  position: relative;
-  cursor: pointer;
-  transition: filter 0.3s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  transition: filter 0.3s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
@@ -52,21 +48,10 @@ const ObjectContainer = styled.div<{
 `;
 
 const ObjectSVG = styled.img<{ $mobileWidth: string }>`
-  width: ${({ $mobileWidth }) => $mobileWidth};
   display: block;
+  width: ${({ $mobileWidth }) => $mobileWidth};
   height: auto;
 `;
-
-// const LabelAnchor = styled.div<{
-//   $pos: { top: string; left: string; rotate: number };
-// }>`
-//   position: absolute;
-//   top: ${({ $pos }) => $pos.top};
-//   left: ${({ $pos }) => $pos.left};
-//   transform: rotate(${({ $pos }) => $pos.rotate}deg);
-//   white-space: nowrap;
-//   z-index: 10;
-// `;
 
 const ExhibitionMobile = () => {
   const navigate = useNavigate();
@@ -90,22 +75,6 @@ const ExhibitionMobile = () => {
               alt={obj.name}
               $mobileWidth={obj.mobileWidth}
             />
-
-            {/* <LabelAnchor $pos={obj.namePosMobile}>
-              <TextBox fontSize="3rem" paddingType="narrow">
-                {obj.name}
-              </TextBox>
-            </LabelAnchor>
-
-            <LabelAnchor $pos={obj.fieldPosMobile}>
-              <TextBox
-                fontSize="1.4rem"
-                textAlign="center"
-                paddingType="narrow"
-              >
-                {`${obj.fieldKo}\n${obj.fieldEn}`}
-              </TextBox>
-            </LabelAnchor> */}
           </ObjectContainer>
         ))}
       </ObjectSection>
