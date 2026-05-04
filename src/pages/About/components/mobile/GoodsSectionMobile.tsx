@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { AboutSection } from '../AboutSection';
-import TextBox from '../../../../components/common/TextBox';
-import SectionTitle from '../SectionTitle';
 import { goodsData } from '../../data/goodsData';
+import { AboutSection } from '../AboutSection';
+import SectionTitle from '../SectionTitle';
+import TextBox from '../../../../components/common/TextBox';
 
 import goodsImg from '../../assets/goods.gif';
 
@@ -18,18 +18,18 @@ const GoodsList = styled.div`
 const GoodsItem = styled.div`
   display: grid;
   grid-template-columns: 40px 1fr;
-  border-top: 2px solid #000;
-  padding-top: 10px;
   width: 100%;
   min-height: 8rem;
+  padding-top: 10px;
+  border-top: 2px solid #000;
 `;
 
 const TextContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-weight: 800;
   width: 100%;
+  font-weight: 800;
 `;
 
 const ItemName = styled.span`
@@ -43,8 +43,8 @@ const ItemEngName = styled.span`
 `;
 
 const ItemKorName = styled.span`
-  font-size: 1.2rem;
   margin-top: 5px;
+  font-size: 1.2rem;
 `;
 
 const ItemPrice = styled.span`
@@ -76,7 +76,6 @@ const GoodsSectionMobile = () => {
           </GoodsItem>
         ))}
       </GoodsList>
-
       <ImagePlaceholder>
         {' '}
         <img src={goodsImg} style={{ height: '100%' }} />

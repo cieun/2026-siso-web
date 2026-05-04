@@ -1,8 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import { AboutSection } from './AboutSection';
-// import TextBox from '../../../components/common/TextBox';
-import TextAnimation from '../Animation/TextAnimation';
 import { introData } from '../data/introData';
+import { AboutSection } from './AboutSection';
+import TextAnimation from '../Animation/TextAnimation';
 
 import Poster1 from '../assets/intro_poster_1.jpg';
 import Poster2 from '../assets/intro_poster_2.jpg';
@@ -12,27 +11,27 @@ import Poster4 from '../assets/intro_poster_4.jpg';
 const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: flex-start;
   gap: 50px;
   width: 100%;
+  height: 100%;
 `;
 
 const RightColumn = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: flex-start;
   gap: 32px;
   width: 100%;
+  height: 100%;
 `;
 
 const TitleContainer = styled.div`
-  width: 100%;
-  height: calc(24vw * 1.4 - 25px); //포스터 이미지 너비 * 높이 비율 +- 조절
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: calc(24vw * 1.4 - 25px); //포스터 이미지 너비 * 높이 비율 +- 조절
   margin-left: -50px;
 
   @media (min-width: 768px) and (max-width: 1100px) {
@@ -45,9 +44,9 @@ const TitleContainer = styled.div`
 const InfoGrid = styled.div`
   display: grid;
   grid-template-columns: 110px 1fr;
-  font-size: 2rem;
-  gap: 0.8rem 20px;
   align-items: start;
+  gap: 0.8rem 20px;
+  font-size: 2rem;
 `;
 
 const InfoLabel = styled.span`
@@ -57,8 +56,8 @@ const InfoLabel = styled.span`
 
 const InfoValue = styled.span`
   font-weight: 600;
-  color: #000;
   line-height: 1.4;
+  color: #000;
 `;
 
 const slide = keyframes`
@@ -72,11 +71,11 @@ const slide = keyframes`
 const PosterGrid = styled.div`
   display: flex;
   gap: 20px;
-  overflow: hidden;
+  position: relative;
   width: 47vw;
   aspect-ratio: 1 / 0.7;
-  position: relative;
   contain: paint;
+  overflow: hidden;
 `;
 
 const SlideTrack = styled.div`
@@ -87,10 +86,10 @@ const SlideTrack = styled.div`
 `;
 
 const PosterImage = styled.img`
+  flex-shrink: 0;
   width: calc((47vw - 20px) / 2);
   height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
 `;
 
 const IntroSection = () => {
@@ -100,9 +99,6 @@ const IntroSection = () => {
     <AboutSection>
       <LeftColumn>
         <TitleContainer>
-          {/* <TextBox fontSize="2.4rem" textAlign="center" rotate={0} width="100%">
-            {introData.title}
-          </TextBox> */}
           <TextAnimation />
         </TitleContainer>
         <div>

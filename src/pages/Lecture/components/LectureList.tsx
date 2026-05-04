@@ -1,34 +1,32 @@
-import { useEffect } from 'react';
 import styled from 'styled-components';
-import { lectureData } from '../data/LectureData';
+import { useEffect } from 'react';
 import TextBox from '../../../components/common/TextBox';
+import { lectureData } from '../data/LectureData';
 
 const ListWrapper = styled.div`
   height: 68vh;
   overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
-
-  scrollbar-width: none;
-
-  -ms-overflow-style: none;
 `;
 
 const RowMain = styled.div`
   display: flex;
   align-items: center;
-  padding: 2.2vh 0 2.23vh 0;
-  font-weight: 800;
   gap: 20px;
+  padding: 2.2vh 0 2.23vh 0;
   font-size: 1.8rem;
+  font-weight: 800;
 `;
 
 const LectureRow = styled.div`
   border-bottom: 2px solid #000;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
 
   &:first-child ${RowMain} {
     border-top: 2px solid #000;
@@ -37,12 +35,13 @@ const LectureRow = styled.div`
 
 const DescriptionArea = styled.div<{ $isOpen: boolean }>`
   max-height: ${({ $isOpen }) => ($isOpen ? '500px' : '0')};
-  opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
-  transition: all 0.4s ease-in-out;
   padding: ${({ $isOpen }) => ($isOpen ? '0 0 20px 50px' : '0 0 0 50px')};
+  font-size: 1.6rem;
   font-weight: 600;
   word-break: keep-all;
-  font-size: 1.6rem;
+  white-space: pre-wrap;
+  opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+  transition: all 0.4s ease-in-out;
 `;
 
 const LectureTitle = styled.div`

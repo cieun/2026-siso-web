@@ -1,28 +1,28 @@
-import { useState } from 'react';
 import styled from 'styled-components';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import TextBox from './TextBox';
 
 const HeaderContainer = styled.header`
-  width: 100%;
-  height: 180px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 0 36px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  width: 100%;
+  height: 180px;
+  padding: 0 36px;
   pointer-events: none;
 `;
 
 const LogoBox = styled(Link)`
   pointer-events: auto;
   img {
-    transform: rotate(-7deg);
-    height: 70px;
     width: auto;
+    height: 70px;
+    transform: rotate(-7deg);
   }
 `;
 
@@ -34,8 +34,8 @@ const Nav = styled.nav`
 
 const MenuLink = styled(Link)`
   font-family: 'GT Walsheim', sans-serif;
-  font-weight: 700;
   font-size: 3.4rem;
+  font-weight: 700;
   color: #000;
 `;
 

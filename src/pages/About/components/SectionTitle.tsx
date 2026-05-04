@@ -11,10 +11,10 @@ interface SectionTitleProps {
 }
 
 const TitleWrapper = styled.div<{ $mt?: string; $mb?: string }>`
-  margin-top: ${({ $mt }) => $mt || '0'};
-  margin-bottom: ${({ $mb }) => $mb || '60px'};
   display: flex;
   flex-direction: column;
+  margin-top: ${({ $mt }) => $mt || '0'};
+  margin-bottom: ${({ $mb }) => $mb || '60px'};
 `;
 
 const SectionTitle = ({

@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
 import styled from 'styled-components';
-import { lectureData } from '../../data/LectureData';
+import { useEffect } from 'react';
 import TextBox from '../../../../components/common/TextBox';
+import { lectureData } from '../../data/LectureData';
 
 const ListWrapper = styled.div`
   width: 100%;
@@ -9,18 +9,18 @@ const ListWrapper = styled.div`
 
 const RowMain = styled.div`
   display: flex;
-  padding: 1.5vh 0 1.5vh 0;
-  font-weight: 800;
   gap: 15px;
-  font-size: 1.7rem;
   width: 100%;
+  padding: 1.5vh 0 1.5vh 0;
+  font-size: 1.7rem;
+  font-weight: 800;
 `;
 
 const LectureRow = styled.div`
-  border-bottom: 2px solid #000;
-  cursor: pointer;
-  overflow: hidden;
   width: 100%;
+  border-bottom: 2px solid #000;
+  overflow: hidden;
+  cursor: pointer;
 
   &:first-child ${RowMain} {
     border-top: 2px solid #000;
@@ -46,12 +46,12 @@ const LectureInfo = styled.div`
 
 const DescriptionArea = styled.div<{ $isOpen: boolean }>`
   max-height: ${({ $isOpen }) => ($isOpen ? '500px' : '0')};
-  opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
-  transition: all 0.4s ease-in-out;
   padding: ${({ $isOpen }) => ($isOpen ? '0 0 20px 35px' : '0 0 0 35px')};
+  font-size: 1.6rem;
   font-weight: 600;
   word-break: keep-all;
-  font-size: 1.6rem;
+  opacity: ${({ $isOpen }) => ($isOpen ? '1' : '0')};
+  transition: all 0.4s ease-in-out;
 `;
 
 const LectureTitle = styled.div`

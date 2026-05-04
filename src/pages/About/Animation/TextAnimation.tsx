@@ -1,34 +1,25 @@
-import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-// import GroupNames from '../assets/poster_clubTexts.svg';
 import Box1 from '../assets/poster_label_1.svg';
 import Box2 from '../assets/poster_label_2.svg';
 import Box3 from '../assets/poster_label_3.svg';
 import Box4 from '../assets/poster_label_4.svg';
 import Box5 from '../assets/poster_label_5.svg';
-
 import Guide from '../assets/guide.svg';
 
-// type Variants = {
-//   [key: string]: any;a
-// };
-
 const TextContainer = styled.div`
-  width: 100%;
-  z-index: 10;
   display: flex;
   flex-direction: column;
-  // position: absolute;
-  // left: 0;
-  // bottom: 36px;
+  z-index: 10;
+  width: 100%;
 `;
 
 const FallingText = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const MasterGroup = styled.div`
@@ -39,15 +30,6 @@ const MasterGroup = styled.div`
 
 const TextAnimation = () => {
   const isDebugMode = false;
-
-  // const groupNamesVariants: Variants = {
-  //   hidden: { opacity: 0, x: -50 },
-  //   visible: {
-  //     opacity: 1,
-  //     x: 0,
-  //     transition: { duration: 0.8, ease: 'easeOut', delay: 6 },
-  //   },
-  // };
 
   const boxData = [
     { src: Box1, x: 138, y: 20, scale: 0.84 },
@@ -229,19 +211,6 @@ const TextAnimation = () => {
   return (
     <>
       <TextContainer>
-        {/* <motion.div
-          variants={groupNamesVariants}
-          initial={isDebugMode ? 'visible' : 'hidden'}
-          animate="visible"
-          style={{ originX: 0 }}
-        >
-          <img
-            src={GroupNames}
-            alt="Names"
-            style={{ width: '100px', transform: 'scale(1)' }}
-          />
-        </motion.div> */}
-
         <FallingText>
           <MasterGroup>
             {boxData.map((data, i) => {

@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+import { useState, useEffect, useRef } from 'react';
 import IntroSectionMobile from './components/mobile/IntroSectionMobile';
 import VisitorGuideSectionMobile from './components/mobile/VisitorGuideSectionMobile';
 import GoodsSectionMobile from './components/mobile/GoodsSectionMobile';
@@ -7,40 +7,37 @@ import EventSectionMobile from './components/mobile/EventSectionMobile';
 import CommitteeSectionMobile from './components/mobile/CommitteeSectionMobile';
 
 const PageWrapper = styled.div<{ $isWhiteBg: boolean }>`
+  position: relative;
   width: 100vw;
   height: 100vh;
-  position: relative;
-  overflow-y: auto;
+  background-color: ${({ theme }) => theme.colors.background};
   overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-  scrollbar-width: none;
-
-  -ms-overflow-style: none;
-
-  background-color: ${({ theme }) => theme.colors.background};
-
   &::after {
-    content: '';
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
     background: ${({ theme }) =>
       `linear-gradient(180deg, ${theme.colors.digitalYellow} 0%, ${theme.colors.background} 100%)`};
-    z-index: 0;
     pointer-events: none;
+    content: '';
   }
 
   &::before {
-    content: '';
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
     background: ${({ theme }) =>
@@ -48,8 +45,8 @@ const PageWrapper = styled.div<{ $isWhiteBg: boolean }>`
 
     opacity: ${({ $isWhiteBg }) => ($isWhiteBg ? 1 : 0)};
     transition: opacity 1s ease-in-out;
-    z-index: 1;
     pointer-events: none;
+    content: '';
   }
 
   & > * {

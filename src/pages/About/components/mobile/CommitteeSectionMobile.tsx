@@ -3,18 +3,17 @@ import { committeeData } from '../../data/committeeData';
 import Footer from '../../../../components/common/Footer';
 
 const CommitteeContainer = styled.section`
-  width: 100%;
-  height: 100vh;
-  padding: 0px 24px 0 24px;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  background: transparent;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding: 0px 24px 0 24px;
+  background: transparent;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 const ContentWrapper = styled.div`
@@ -24,8 +23,8 @@ const ContentWrapper = styled.div`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 60px;
   width: 100%;
+  margin-bottom: 60px;
 `;
 
 const SubTitleGroup = styled.div`
@@ -33,9 +32,9 @@ const SubTitleGroup = styled.div`
 `;
 
 const EngSub = styled.h3`
+  margin: 0;
   font-size: 3.2rem;
   font-weight: 800;
-  margin: 0;
 `;
 
 const KorSub = styled.p`
@@ -43,12 +42,11 @@ const KorSub = styled.p`
 `;
 
 const LogoGrid = styled.div`
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px 50px;
   flex-wrap: wrap;
-
+  width: 100%;
   margin-top: 20px;
 `;
 
@@ -84,9 +82,9 @@ const Role = styled.span`
 `;
 
 const Names = styled.span`
+  font-weight: 600;
   color: #000;
   word-break: keep-all;
-  font-weight: 600;
 `;
 
 const CommitteeSectionMobile = () => {

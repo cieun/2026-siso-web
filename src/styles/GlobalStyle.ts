@@ -22,9 +22,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
   * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   html{
@@ -39,12 +39,10 @@ const GlobalStyle = createGlobalStyle`
 
   body {
    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
-
-    font-family: 'GT Walsheim', 'Apple SD Gothic Neo', sans-serif;
-    -webkit-font-smoothing: antialiased;
-
-    line-height: 1.7;
+   font-family: 'GT Walsheim', 'Apple SD Gothic Neo', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   line-height: 1.7;
+   color: ${({ theme }) => theme.colors.text};
   }
 
   h1, h2, strong {

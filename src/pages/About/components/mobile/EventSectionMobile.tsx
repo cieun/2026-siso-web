@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { eventData } from '../../data/eventData';
 import { AboutSection } from '../AboutSection';
 import SectionTitle from '../SectionTitle';
-import { eventData } from '../../data/eventData';
 
 import StampImg from '../../assets/event_stamp.svg';
 import SeesawImg from '../../assets/event_siso.svg';
@@ -15,9 +15,9 @@ const LeftColumn = styled.div`
 `;
 
 const BgBox = styled.div`
+  position: relative;
   width: 100%;
   height: 40vh;
-  position: relative;
 `;
 
 const BgGraphic = styled.img<{
@@ -32,8 +32,8 @@ const BgGraphic = styled.img<{
   bottom: ${({ $bottom }) => $bottom || 'auto'};
   left: ${({ $left }) => $left || 'auto'};
   right: ${({ $right }) => $right || 'auto'};
-  width: ${({ $width }) => $width || 'auto'};
   z-index: 1;
+  width: ${({ $width }) => $width || 'auto'};
   pointer-events: none;
 `;
 
@@ -44,8 +44,8 @@ const EventBox = styled.div`
 `;
 
 const TitleGroup = styled.div`
-  text-align: center;
   margin-bottom: 10px;
+  text-align: center;
 `;
 
 const EngTitle = styled.h2`
@@ -60,9 +60,9 @@ const KorTitle = styled.p`
 
 const Divider = styled.hr`
   width: 100%;
+  margin: 20px 0 20px 0;
   border: none;
   border-top: 2px solid #000;
-  margin: 20px 0 20px 0;
 `;
 
 const Description = styled.p`

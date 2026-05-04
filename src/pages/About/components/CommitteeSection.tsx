@@ -3,18 +3,17 @@ import { committeeData } from '../data/committeeData';
 import Footer from '../../../components/common/Footer';
 
 const CommitteeContainer = styled.section`
-  width: 100%;
-  height: 100vh;
-  padding: 180px 36px 0 36px;
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  background: transparent;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding: 180px 36px 0 36px;
+  background: transparent;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 const ContentWrapper = styled.div`
@@ -35,9 +34,9 @@ const SubTitleGroup = styled.div`
 `;
 
 const EngSub = styled.h3`
+  margin: 0;
   font-size: 3.2rem;
   font-weight: 800;
-  margin: 0;
 `;
 
 const KorSub = styled.p`
@@ -63,27 +62,26 @@ const Role = styled.span`
 `;
 
 const Names = styled.span`
-  color: #000;
-  word-break: keep-all;
   font-weight: 600;
+  word-break: keep-all;
+  color: #000;
 `;
 
 const LogoGrid = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: row;
   gap: 50px;
   flex-wrap: wrap;
-
+  width: 100%;
   margin-top: 20px;
 `;
 
 const LogoBox = styled.div`
-  width: 100px;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100px;
+  height: 100px;
 `;
 
 const CommitteeSection = () => {
