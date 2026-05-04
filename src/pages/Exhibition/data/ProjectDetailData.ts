@@ -211,7 +211,6 @@ export const projectDetailData: { [key: string]: any } = {
       '신준성',
       '유지예',
       '전아영',
-      '전채령',
     ],
     instagram: 'hivcdproto',
     instagramLink: 'https://www.instagram.com/hivcdproto/',
