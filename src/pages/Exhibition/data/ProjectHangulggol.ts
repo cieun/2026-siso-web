@@ -44,7 +44,7 @@ export const PROJECTS_HANGULGGOL = [
     title: '믿음 사이',
     author: '류희원',
     desc: '우리는 왜 운세를 확인하고, 우연의 일치에 의미를 부여할까. 미신을 분석하거나 판단하는 대신, 믿게 되는 순간의 마음을 들여다본다. 불안을 덜어내기 위해 붙잡았던 그 믿음 사이에는 무엇이 있었을까?',
-    imgName: 'hangulggol_thumbnail_sonjihye.jpg',
+    imgName: 'hangulggol_thumbnail_ryooheewon.jpg',
     instaId: 'ryhw.oo',
   },
   {

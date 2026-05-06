@@ -28,6 +28,15 @@ export const PROJECTS_PROTO = [
   },
   {
     club: 'proto',
+    title: 'Tragedy and Comedy',
+    author: '손서연',
+    desc: "이 작업은 찰리 채플린의 '가까이서 보면 비극, 멀리서 보면 희극'을 그대로 받아들이지 않고, 관람자의 개입을 통해 시점을 흔든다. 그 과정에서 삶의 감각이 거리와 시선에 따라 어떻게 뒤집히는지를 묻는다. 순간의 감정과 이후의 해석은 언제나 같지 않다. 이 작업은 그 간극을 드러내며, 삶을 바라보는 태도에 질문을 던진다.",
+    imgName:
+      'proto_SeoyeonSohn_1.jpg, proto_SeoyeonSohn_2.jpg, proto_SeoyeonSohn_3.jpg, proto_SeoyeonSohn_4.jpg',
+    instaId: 'junseongshene',
+  },
+  {
+    club: 'proto',
     title: 'ADverse Effect',
     author: '신준성',
     desc: '아날로그와 디지털의 경계가 붕괴된 시대에서 현대인은 범람하는 광고의 홍수에 구속된다. 일거수일투족을 해체하고 재구성하는 알고리즘은 홍보를 초월하여 인간의 원초적 욕구와 행동양식을 치밀하게 설계하고 지배한다. 본 전시는 단순한 홍보를 넘어 인간의 사고를 제어하는 현 시대 광고의 폭력적 침투를 조명한다.',

@@ -96,6 +96,8 @@ export const PROJECTS_GREENBEE = [
     title: 'ifforis',
     author: '윤채원',
     desc: '낯선 공동체 안에서 한 소녀가 끊임없이 눈치를 보게 되는 상태에서 출발한다. 이곳에는 분명 어떤 기준이 존재하는 것처럼 보이지만, 그 기준은 말로 설명되지 않는다. 이러한 상황 속에서 가장 먼저 반응하는 신체, 손에 주목한다. 손은 말보다 빠르게 움직이며, 손모양과 제스처는 하나의 고정된 언어라기보다 상황과 문화에 따라 다르게 해석되는 기준에 가깝다. \n\n손모양이 명확한 의미를 갖는 순간보다 해석의 기준 위에서 망설이는 상태를 통해 눈치와 판단의 피로를 드러낸다.\n',
+    imgName:
+      'greenbee_yoonchaiwon_01.webp, greenbee_yoonchaiwon_02.webp, greenbee_yoonchaiwon_03.webp, greenbee_yoonchaiwon_04.webp, greenbee_yoonchaiwon_05.webp, greenbee_yoonchaiwon_06.webp, greenbee_thumbnail_yoonchaiwon.jpg',
     instaId: 'ycworkss',
   },
   {
